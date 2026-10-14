@@ -3,37 +3,33 @@
 Exit 1 if a readable role is under 4.5:1 on the window background."""
 import sys
 
-WINDOW = "#E6E7ED"
-PANE = "#D6D8DF"
+WINDOW = "#E9E6DF"
+PANE = "#DDD9D1"
 
-# (role, hex, reads) where reads=True means a user reads it as text.
 SURFACES = [
-    ("Background", "Lavender grey", ["#E6E7ED"]),
-    ("Containers", "Mist / Pane", ["#DEE0E6", "#D6D8DF"]),
-    ("Terminal", "Pane, opaque", ["#D6D8DF"]),
+    ("Background", "Stone", ["#E9E6DF"]),
+    ("Containers", "Linen / Pane", ["#E2DED6", "#DDD9D1"]),
+    ("Terminal", "Pane, opaque", ["#DDD9D1"]),
 ]
 
 # (role, name, hex, reads) where reads=True means a user reads it as text.
 ROLES = [
-    ("Text", "Ink", "#343B59", True),
-    ("Accent", "Blue", "#2959AA", True),
-    ("Success", "Green", "#33635C", True),
-    ("Warning", "Yellow", "#8F5E15", True),
-    ("Error", "Red", "#8C4351", True),
-    ("Purple", "Violet", "#7B43BA", True),
-    ("Cyan", "Teal", "#006C86", True),
-    ("String", "Moss", "#385F0D", True),
-    ("Number", "Umber", "#965027", True),
-    ("Keyword", "Grape", "#65359D", True),
-    ("Muted", "Slate", "#707280", False),
-    ("Comment", "Grey", "#888B94", False),
-    ("Faint", "btop inactive text", "#9DA0AB", False),
+    ("Text", "Ink", "#2B2E36", True),
+    ("Accent", "Ember", "#A4441A", True),
+    ("Success", "Moss", "#4C6B45", True),
+    ("Warning", "Amber", "#8A5E12", True),
+    ("Error", "Brick", "#9E3A3A", True),
+    ("Blue", "Slate blue", "#2F5C8A", True),
+    ("Magenta", "Heather", "#6E4E8C", True),
+    ("Cyan", "Verdigris", "#2E6E6A", True),
+    ("Muted", "Muted", "#6B6F78", False),
+    ("Comment", "Comment", "#8C9099", False),
 ]
 
 
 def swatch(hexv):
-    h = hexv.lstrip("#").lower()
-    return f"![{hexv}](https://placehold.co/12x12/{h}/{h}.png)"
+    hx = hexv.lstrip("#").lower()
+    return f"![{hexv}](https://placehold.co/12x12/{hx}/{hx}.png)"
 
 
 def lum(h):
@@ -52,7 +48,7 @@ def main():
     print("| Role | Color | Hex |")
     print("|------|-------|-----|")
     for role, name, hexes in SURFACES:
-        hx = " / ".join(f"`{h}`" for h in hexes)
+        hx = " / ".join(f"`{x}`" for x in hexes)
         print(f"| {role} | {swatch(hexes[0])} {name} | {hx} |")
     for role, name, hexv, reads in ROLES:
         w, p = ratio(hexv, WINDOW), ratio(hexv, PANE)
