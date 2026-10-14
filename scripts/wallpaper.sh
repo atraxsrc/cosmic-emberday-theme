@@ -8,9 +8,9 @@
 # The source is cover-cropped and centred at 3840x2160, converted to 16-bit
 # grey and inverted when its mean luminance is above 0.5 for night (ink-on-paper
 # sources) or below 0.5 for day (dark sources). wallpaper.py then maps the grey
-# onto every colour of backgrounds/*.gpl: window paper, a pane and container
-# disc behind the subject, comment and muted shadows, the seven colours swept
-# across the subject, text on the strongest lines. See its docstring.
+# onto backgrounds/*.gpl: window paper, comment and muted shadows, slate blue
+# for the body, ember on the brightest strokes, text on the strongest lines,
+# and a swatch strip of every palette colour. See its docstring.
 set -euo pipefail
 
 mode="${1:-}"; src="${2:-}"; out="${3:-}"

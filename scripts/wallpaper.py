@@ -1,30 +1,33 @@
 #!/usr/bin/env python3
-"""Recolour one wallpaper with every colour of the repo palette.
+"""Recolour one wallpaper with the repo palette, every colour included.
 
-    python3 scripts/wallpaper.py night GREY.png OUT.png
-    python3 scripts/wallpaper.py day   GREY.png OUT.png
-    python3 scripts/wallpaper.py night --v1 backgrounds/ember-eagle.png OUT.png
+    python3 scripts/wallpaper.py night [--accent NAME] GREY.png OUT.png
+    python3 scripts/wallpaper.py day   [--accent NAME] GREY.png OUT.png
+    python3 scripts/wallpaper.py night --v1 --accent Amber ember-eagle-v1.png OUT.png
 
 GREY is the cover-cropped grey render that scripts/wallpaper.sh prepares (light
 subject on dark for night, dark subject on light for day). --v1 instead reads
 a wallpaper made by the first, two-tone lookup and recovers its grey levels, so
 the shipped wallpapers can be redone without the cool-wallpapers sources.
 
-The palette is read from backgrounds/*.gpl. Each pixel gets an ink level, 0 on
-the paper and 1 on the strongest line, and runs along one ramp of roles:
+The palette is read from backgrounds/*.gpl. The subject stays calm, as the
+palette asks: neutrals for the big shapes, one supporting colour (--accent,
+slate blue unless named) for the body, and ember small and loud near the top.
+Each pixel gets an ink level, 0 on the paper and 1 on the strongest line, and
+its rank inside the subject runs it along one ramp:
 
-    ink  0.00-0.20  window, flat, so the paper lands exactly on the window
-         0.20-0.46  comment, then muted (shadows and fine lines)
-         0.46-0.80  one of the seven colours (ember, moss, amber, brick,
-                    slate blue, heather, verdigris), held flat
-         0.80-1.00  text (fog by night, ink by day) on the strongest lines
+    window   the paper, flat, so it lands exactly on the window colour
+    comment  faint shading
+    muted    shadows and fine lines
+    accent   the body of the subject
+    ember    the brightest (night) or boldest (day) strokes
+    text     the strongest lines
 
-Which of the seven a pixel takes depends on where it sits: the subject is
-swept on a diagonal and split into seven bands of equal ink, so each colour
-covers about a seventh of the subject. Behind the subject sits a stepped disc
-in pane and container, kept clear of the corners so they stay on the window.
+The colours the subject does not use sit in a small swatch strip in the
+bottom right, one square per palette colour, on a plate of window colour.
 Blends between roles are mixed in OKLab; every role holds a flat band, so
-each palette colour is present as its exact hex.
+each palette colour is present as its exact hex, and the corners stay on
+the window.
 """
 import glob
 import os
@@ -34,8 +37,7 @@ import numpy as np
 from PIL import Image
 
 W, H = 3840, 2160
-HUES = ["Slate blue", "Verdigris", "Moss", "Amber", "Ember", "Brick", "Heather"]
-SWEEP = np.deg2rad(28)  # top left to bottom right
+ACCENTS = ["Brick", "Ember", "Amber", "Moss", "Verdigris", "Slate blue", "Heather"]
 
 # The first lookup of scripts/wallpaper.sh, as (rows, from, to); used by --v1.
 V1 = {
@@ -123,19 +125,6 @@ def ink_from_v1(mode, path):
     return g if mode == "night" else 1 - g
 
 
-def densest(mask, step=16):
-    """Centroid of the mask weighted by the square of its local density (a box
-    a sixth of the height wide), so solid shapes count and thin lines barely do."""
-    h, w = H // step, W // step
-    small = mask[:h * step, :w * step].reshape(h, step, w, step).mean((1, 3))
-    k = H // 6 // step
-    c = np.pad(small, ((k // 2 + 1, k - k // 2), (k // 2 + 1, k - k // 2))).cumsum(0).cumsum(1)
-    box = (c[k:, k:] - c[:-k, k:] - c[k:, :-k] + c[:-k, :-k])[:h, :w] / k ** 2
-    wt = small * box ** 2
-    yy, xx = np.mgrid[0:h, 0:w]
-    return ((xx * wt).sum() / wt.sum() + 0.5) * step, ((yy * wt).sum() / wt.sum() + 0.5) * step
-
-
 def rank(ink, subject):
     """Spread the subject's ink evenly over 0.2-1 by its own distribution (ties
     take their middle rank), so a faint render and a bold one both run the whole
@@ -146,66 +135,50 @@ def rank(ink, subject):
     return np.where(subject, 0.2 + 0.8 * mid[bins], ink).astype(np.float32)
 
 
-def render(mode, ink, pal):
-    lab = {k: to_lab(v) for k, v in pal.items()}
-    window = lab["Window"]
-    # outer disc is whichever of pane / container sits nearer the window
-    near, far = sorted(["Pane", "Container"], key=lambda k: abs(lab[k][0] - window[0]))
+def strip(img, pal, size=40, gap=12, pad=28, margin=160):
+    """One square per palette colour but the window, bottom right: neutrals from
+    the window out, then the colours round the wheel. Draws on img in place."""
+    window = pal["Window"]
+    neutrals = sorted(["Pane", "Container", "Comment", "Muted", "Text"],
+                      key=lambda k: np.abs(pal[k] - window).sum())
+    names = neutrals + ACCENTS
+    w = len(names) * size + (len(names) - 1) * gap
+    x0, y0 = W - margin - w, H - margin - size
+    img[y0 - pad:y0 + size + pad, x0 - pad:x0 + w + pad] = window
+    for n, k in enumerate(names):
+        x = x0 + n * (size + gap)
+        img[y0:y0 + size, x:x + size] = pal[k]
 
-    ys, xs = np.mgrid[0:H, 0:W].astype(np.float32)
+
+def render(mode, ink, pal, accent="Slate blue"):
+    lab = {k: to_lab(v) for k, v in pal.items()}
     subject = ink > 0.2
-    ink = rank(ink, subject)
     if not subject.any():
         sys.exit("nothing above the paper: is the mode right?")
+    ink = rank(ink, subject)
 
-    # stepped disc behind the subject: centred where the subject is densest
-    # (so thin lines trailing off do not pull it away), wide enough for most
-    # of it, its rim kept 120 px inside every edge where the room allows
-    cx, cy = densest(subject)
-    dist = np.hypot(xs - cx, ys - cy)
-    r = 1.15 * np.percentile(dist[subject], 70)
-    r = min(r, cx - 120, W - 120 - cx, cy - 120, H - 120 - cy, 0.46 * H)
-    r = max(r, 0.16 * H)
-    outer = np.clip(r - dist + 0.5, 0, 1)[..., None]
-    inner = np.clip(0.72 * r - dist + 0.5, 0, 1)[..., None]
-    base = window + (lab[near] - window) * outer
-    base = base + (lab[far] - base) * inner
-
-    # colour sweep: equal-ink bands of the seven colours along a diagonal
-    proj = xs * np.cos(SWEEP) + ys * np.sin(SWEEP)
-    hot = (ink > 0.48) & (ink < 0.84)
-    pts = proj[hot] if hot.sum() > 1000 else proj[subject]
-    q = np.quantile(pts, np.linspace(0, 1, 513))
-    q = np.maximum.accumulate(q + np.arange(513) * 1e-4)
-    t = np.interp(proj, q, np.linspace(0, 1, 513))
-    s = np.clip(t * len(HUES) - 0.5, 0, len(HUES) - 1)
-    i = np.minimum(s.astype(np.int32), len(HUES) - 2)
-    f = smooth((s - i - 0.3) / 0.4)[..., None]
-    hues = np.array([lab[k] for k in HUES])
-    hue = hues[i] + (hues[i + 1] - hues[i]) * f
-
-    keys = [(0.20, base), (0.26, lab["Comment"]), (0.31, lab["Comment"]),
-            (0.37, lab["Muted"]), (0.42, lab["Muted"]), (0.48, hue),
-            (0.84, hue), (0.92, lab["Text"])]
-    out = np.broadcast_to(base, (H, W, 3)).copy()
+    keys = [(0.20, "Window"), (0.28, "Comment"), (0.34, "Comment"),
+            (0.42, "Muted"), (0.50, "Muted"), (0.60, accent),
+            (0.76, accent), (0.82, "Ember"), (0.88, "Ember"), (0.95, "Text")]
+    out = np.broadcast_to(lab["Window"], (H, W, 3)).copy()
     for (a, ca), (b, cb) in zip(keys, keys[1:]):
         m = ink > a
         w = smooth((ink[m] - a) / (b - a))[:, None]
-        ca = ca[m] if np.ndim(ca) == 3 else ca
-        cb = cb[m] if np.ndim(cb) == 3 else cb
-        out[m] = ca + (cb - ca) * w
-    return from_lab(out.reshape(-1, 3)).reshape(H, W, 3)
+        out[m] = lab[ca] + (lab[cb] - lab[ca]) * w
+    img = from_lab(out.reshape(-1, 3)).reshape(H, W, 3)
+    strip(img, pal)
+    return img
 
 
-def check(img, pal, path):
+def check(img, pal, path, corners=True):
     flat = img.reshape(-1, 3)
     missing = []
     for k, v in pal.items():
         n = int(np.all(flat == v.astype(np.uint8), axis=1).sum())
         if n < 500:
             missing.append(f"{k} ({n} px)")
-    corners = [img[0, 0], img[0, -1], img[-1, 0], img[-1, -1]]
-    if any((c != pal["Window"]).any() for c in corners):
+    edge = [img[0, 0], img[0, -1], img[-1, 0], img[-1, -1]]
+    if corners and any((c != pal["Window"]).any() for c in edge):
         missing.append("window corners")
     if missing:
         sys.exit(f"{path}: short of " + ", ".join(missing))
@@ -214,13 +187,18 @@ def check(img, pal, path):
 def main(argv):
     v1 = "--v1" in argv
     argv = [a for a in argv if a != "--v1"]
-    if len(argv) != 3 or argv[0] not in ("night", "day"):
-        sys.exit(__doc__.split("\n\n")[1])
+    accent = "Slate blue"
+    if "--accent" in argv:
+        i = argv.index("--accent")
+        accent = argv[i + 1]
+        del argv[i:i + 2]
+    if len(argv) != 3 or argv[0] not in ("night", "day") or accent not in ACCENTS:
+        sys.exit(__doc__.split("\n\n")[1] + "\n\naccent: " + ", ".join(ACCENTS))
     mode, src, out = argv
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     pal = palette(root)
     ink = (ink_from_v1 if v1 else ink_from_grey)(mode, src)
-    img = render(mode, ink, pal)
+    img = render(mode, ink, pal, accent)
     check(img, pal, out)
     Image.fromarray(img).save(out, optimize=True)
     print(out)

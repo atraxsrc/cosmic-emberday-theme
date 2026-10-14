@@ -93,7 +93,8 @@ Window hint `#A4441A`. Ratios per role are in `docs/showcase.md`, or run
 │   ├── update_system.sh         # nala + flatpak, dark ANSI for a light terminal
 │   ├── contrast.py              # palette contrast table, feeds the README
 │   ├── wallpaper.sh             # renders a wallpaper from any source image
-│   └── wallpaper.py             # maps its grey onto all 13 palette colours
+│   ├── wallpaper.py             # maps its grey onto the palette
+│   └── mocha.py                 # recolours a Catppuccin Mocha wallpaper to the palette
 ├── zsh
 │   ├── emberday.zsh             # LS_COLORS, highlighting colours, aliases, starship
 │   └── install.sh
@@ -101,7 +102,7 @@ Window hint `#A4441A`. Ratios per role are in `docs/showcase.md`, or run
 │   ├── cursors/                 # cursor preview
 │   ├── screenshot.png           # README screenshot
 │   └── wallpaper.png            # the astronaut on the bare desktop
-├── backgrounds/                 # five wallpapers, emberday-<subject>.png, and emberday.gpl
+├── backgrounds/                 # ten wallpapers, emberday-<subject>.png, and emberday.gpl
 ├── docs
 │   └── showcase.md              # the rice describing itself, for the Postilla pane of the screenshot
 ├── LICENSE
@@ -324,27 +325,30 @@ Restart open apps afterwards (Files caches icons per window).
 Add `--system` to install to `/usr/share/icons` instead, for every user and the
 login screen (asks for sudo); `--user` is the default.
 
-Five subjects rendered by `scripts/wallpaper.sh` from
-[cool-wallpapers](https://github.com/atraxsrc/cool-wallpapers), named `emberday-<subject>.png`
-in [`backgrounds/`](backgrounds/): astronaut (the one in the screenshot), samurai,
-geisha, city and the eagle; `emberday.gpl` sits beside them for GIMP work. Any other
-source renders with one command:
+Ten wallpapers in [`backgrounds/`](backgrounds/), named `emberday-<subject>.png`, with
+`emberday.gpl` beside them for GIMP work. Every one carries all 13 palette colours as
+their exact hex: whatever the picture does not use sits in a small swatch strip in
+the bottom right.
+
+Five subjects come from [cool-wallpapers](https://github.com/atraxsrc/cool-wallpapers),
+rendered by `scripts/wallpaper.sh`: astronaut (the one in the screenshot), samurai,
+geisha, city and the eagle. The grey of the source runs from the window through
+comment and muted shadows to a slate blue body, with ember only on the brightest
+strokes and text on the strongest lines. Any other source renders with one command:
 
 ```bash
 ./scripts/wallpaper.sh day path/to/source.png backgrounds/emberday-<subject>.png
 ```
 
-Every wallpaper carries all 13 palette colours, each as its exact hex: the paper is
-the window, a stepped disc of pane and container sits behind the subject, comment
-and muted draw the shadows, the seven colours (slate blue, verdigris, moss, amber,
-ember, brick, heather) sweep across the subject on a diagonal in bands of equal
-area, and text takes the strongest lines. `scripts/wallpaper.py` reads the colours
-from `backgrounds/emberday.gpl`, refuses to write a wallpaper short of any of them or
-whose corners are off the window, and with `--v1` re-renders a wallpaper made by the
-first two-tone lookup without its source:
+Five more are the pick of [catppuccin-mocha-walls](https://github.com/atraxsrc/catppuccin-mocha-walls),
+recoloured by `scripts/mocha.py`: minimalist-black-hole, black-hole, yohoho,
+puffy-stars and lit-up-sky. Each Mocha colour moves onto its role here (mantle to the
+window, the surfaces and overlays to the neutrals, every warm colour to the ember
+family, the blues to slate blue), so the picture keeps its own light and soft edges.
+The day half turns the neutrals over, so the night sky becomes the stone window:
 
 ```bash
-python3 scripts/wallpaper.py day --v1 backgrounds/emberday-<subject>.png backgrounds/emberday-<subject>.png
+python3 scripts/mocha.py day path/to/mocha-wallpaper.png backgrounds/emberday-<subject>.png
 ```
 
 Settings → Wallpaper → Add image → a file from `backgrounds/`.
@@ -410,6 +414,8 @@ mkdir -p ~/.config/btop/themes && cp btop/EmberDay.theme ~/.config/btop/themes/
 ## Credits
 
 - Palette: Ember, designed for this pair (see `docs/superpowers/specs/2026-10-14-ember-design.md` in cosmic-ember-theme).
+- Mocha wallpapers: [catppuccin-mocha-walls](https://github.com/atraxsrc/catppuccin-mocha-walls),
+  a collection whose pictures belong to their original artists.
 - Subjects: [cool-wallpapers](https://github.com/atraxsrc/cool-wallpapers); the eagle from
   [omarchy-thegreek-theme](https://github.com/HANCORE-linux/omarchy-thegreek-theme) (MIT).
 - Templates: [cosmic-tokyonight-theme](https://github.com/atraxsrc/cosmic-tokyonight-theme) and
