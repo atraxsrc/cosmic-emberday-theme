@@ -1,0 +1,49 @@
+{
+  "manifest_version": 2,
+  "name": "Cosmic Ember Day",
+  "version": "1.0",
+  "description": "Lavender-grey light theme from the COSMIC Ember Day rice: green icons, one blue accent.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{dc81b7ed-0a4d-47ce-8b4c-d4ae2f2ab497}"
+    }
+  },
+  "icons": {
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "64": "icons/icon-64.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "theme": {
+    "colors": {
+      "toolbar": "#dee0e6",
+      "toolbar_text": "#343b59",
+      "frame": "#e6e7ed",
+      "tab_background_text": "#565c75",
+      "toolbar_field": "#ecedf2",
+      "toolbar_field_text": "#343b59",
+      "toolbar_field_border_focus": "#2959aa",
+      "toolbar_field_highlight": "#2959aa",
+      "toolbar_field_highlight_text": "#e6e7ed",
+      "tab_line": "#2959aa",
+      "popup": "#dee0e6",
+      "popup_text": "#343b59",
+      "button_background_active": "#2959aa",
+      "button_background_hover": "#c9cbd2",
+      "frame_inactive": "#e6e7ed",
+      "icons_attention": "#2959aa",
+      "icons": "#33635c",
+      "ntp_background": "#e6e7ed",
+      "ntp_text": "#343b59",
+      "popup_border": "#969aaa",
+      "popup_highlight_text": "#e6e7ed",
+      "popup_highlight": "#2959aa",
+      "sidebar_border": "#b1b3c1",
+      "sidebar_highlight_text": "#e6e7ed",
+      "sidebar_highlight": "#2959aa",
+      "sidebar_text": "#343b59",
+      "tab_loading": "#2959aa"
+    }
+  }
+}
