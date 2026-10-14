@@ -4,7 +4,7 @@
    palette (light)
 
    New tab / home / private pages only:
-     - ember accent and focus, ember links with ink on hover
+     - ember accent and focus, verdigris links with ink on hover
      - ember focus ring on shortcut tiles, ember personalize button
      - shortcut artwork hidden (tiles stay, icons go blank)
    No size / position changes.
@@ -32,7 +32,7 @@
     --in-content-accent-color-active: #4C6B45 !important;
     --in-content-focus-outline-color: #A4441A !important;
 
-    --link-color: #A4441A !important;
+    --link-color: #2E6E6A !important;
     --link-color-hover: #2B2E36 !important;
 
     --focus-outline-color: #A4441A !important;

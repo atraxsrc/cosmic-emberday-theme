@@ -15,7 +15,8 @@ Stylesheets:
 | `#DBCCBF` | Menu hover row (ember tinted into the panel) |
 | `#D6BFB0` | Menu pressed row          |
 | `#999896` | Separators, menu border   |
-| `#A4441A` | Accent, URL bar border, hover rail, links |
+| `#A4441A` | Accent, URL bar border, hover rail |
+| `#2E6E6A` | Links (verdigris, as on the dark half) |
 | `#8B3A16` | Button hover (dark ember)  |
 | `#4C6B45` | New tab accent, active    |
 | `#2B2E36` | Menu text and link hover text (ink) |
