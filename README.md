@@ -92,7 +92,8 @@ Window hint `#A4441A`. Ratios per role are in `docs/showcase.md`, or run
 ├── scripts
 │   ├── update_system.sh         # nala + flatpak, dark ANSI for a light terminal
 │   ├── contrast.py              # palette contrast table, feeds the README
-│   └── wallpaper.sh             # renders a wallpaper from any source image
+│   ├── wallpaper.sh             # renders a wallpaper from any source image
+│   └── wallpaper.py             # maps its grey onto all 13 palette colours
 ├── zsh
 │   ├── emberday.zsh             # LS_COLORS, highlighting colours, aliases, starship
 │   └── install.sh
@@ -331,6 +332,19 @@ source renders with one command:
 
 ```bash
 ./scripts/wallpaper.sh day path/to/source.png backgrounds/emberday-<subject>.png
+```
+
+Every wallpaper carries all 13 palette colours, each as its exact hex: the paper is
+the window, a stepped disc of pane and container sits behind the subject, comment
+and muted draw the shadows, the seven colours (slate blue, verdigris, moss, amber,
+ember, brick, heather) sweep across the subject on a diagonal in bands of equal
+area, and text takes the strongest lines. `scripts/wallpaper.py` reads the colours
+from `backgrounds/emberday.gpl`, refuses to write a wallpaper short of any of them or
+whose corners are off the window, and with `--v1` re-renders a wallpaper made by the
+first two-tone lookup without its source:
+
+```bash
+python3 scripts/wallpaper.py day --v1 backgrounds/emberday-<subject>.png backgrounds/emberday-<subject>.png
 ```
 
 Settings → Wallpaper → Add image → a file from `backgrounds/`.
