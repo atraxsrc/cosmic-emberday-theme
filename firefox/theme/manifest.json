@@ -1,49 +1,49 @@
 {
-  "manifest_version": 2,
-  "name": "Cosmic Ember Day",
-  "version": "1.0",
-  "description": "Lavender-grey light theme from the COSMIC Ember Day rice: green icons, one blue accent.",
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "{dc81b7ed-0a4d-47ce-8b4c-d4ae2f2ab497}"
+    "manifest_version": 2,
+    "name": "Cosmic Ember Day",
+    "version": "1.0",
+    "description": "Warm stone light theme from the COSMIC Ember Day rice: moss icons, one ember accent.",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{1cb1a955-4992-42ca-a01a-ebf09ad93000}"
+        }
+    },
+    "icons": {
+        "32": "icons/icon-32.png",
+        "48": "icons/icon-48.png",
+        "64": "icons/icon-64.png",
+        "96": "icons/icon-96.png",
+        "128": "icons/icon-128.png"
+    },
+    "theme": {
+        "colors": {
+            "toolbar": "#e2ded6",
+            "toolbar_text": "#2b2e36",
+            "frame": "#e9e6df",
+            "tab_background_text": "#505156",
+            "toolbar_field": "#e9e6e0",
+            "toolbar_field_text": "#2b2e36",
+            "toolbar_field_border_focus": "#a4441a",
+            "toolbar_field_highlight": "#a4441a",
+            "toolbar_field_highlight_text": "#e9e6df",
+            "tab_line": "#a4441a",
+            "popup": "#e2ded6",
+            "popup_text": "#2b2e36",
+            "button_background_active": "#a4441a",
+            "button_background_hover": "#d4cfc6",
+            "frame_inactive": "#e9e6df",
+            "icons_attention": "#a4441a",
+            "icons": "#4c6b45",
+            "ntp_background": "#e9e6df",
+            "ntp_text": "#2b2e36",
+            "popup_border": "#999896",
+            "popup_highlight_text": "#e9e6df",
+            "popup_highlight": "#a4441a",
+            "sidebar_border": "#d4cfc6",
+            "sidebar_highlight_text": "#e9e6df",
+            "sidebar_highlight": "#a4441a",
+            "sidebar_text": "#2b2e36",
+            "tab_loading": "#a4441a"
+        }
     }
-  },
-  "icons": {
-    "32": "icons/icon-32.png",
-    "48": "icons/icon-48.png",
-    "64": "icons/icon-64.png",
-    "96": "icons/icon-96.png",
-    "128": "icons/icon-128.png"
-  },
-  "theme": {
-    "colors": {
-      "toolbar": "#dee0e6",
-      "toolbar_text": "#343b59",
-      "frame": "#e6e7ed",
-      "tab_background_text": "#565c75",
-      "toolbar_field": "#ecedf2",
-      "toolbar_field_text": "#343b59",
-      "toolbar_field_border_focus": "#2959aa",
-      "toolbar_field_highlight": "#2959aa",
-      "toolbar_field_highlight_text": "#e6e7ed",
-      "tab_line": "#2959aa",
-      "popup": "#dee0e6",
-      "popup_text": "#343b59",
-      "button_background_active": "#2959aa",
-      "button_background_hover": "#c9cbd2",
-      "frame_inactive": "#e6e7ed",
-      "icons_attention": "#2959aa",
-      "icons": "#33635c",
-      "ntp_background": "#e6e7ed",
-      "ntp_text": "#343b59",
-      "popup_border": "#969aaa",
-      "popup_highlight_text": "#e6e7ed",
-      "popup_highlight": "#2959aa",
-      "sidebar_border": "#b1b3c1",
-      "sidebar_highlight_text": "#e6e7ed",
-      "sidebar_highlight": "#2959aa",
-      "sidebar_text": "#343b59",
-      "tab_loading": "#2959aa"
-    }
-  }
 }

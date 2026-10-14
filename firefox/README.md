@@ -1,8 +1,8 @@
 # Firefox - Ember Day
 
 Firefox chrome matching the COSMIC Ember Day rice. Ported from the DarkGold
-baseline (theme recipe and stylesheets), recoloured for lavender grey and blue.
-The light half of [Tokyo Night](https://github.com/atraxsrc/cosmic-tokyonight-theme).
+baseline (theme recipe and stylesheets), recoloured for warm stone and ember.
+The light half of [Ember](https://github.com/atraxsrc/cosmic-ember-theme).
 
 ## Palette
 
@@ -10,16 +10,16 @@ Stylesheets:
 
 | Hex       | Role                      |
 |-----------|---------------------------|
-| `#E6E7ED` | Frame, page chrome        |
-| `#DEE0E6` | Panels, menus             |
-| `#C8D0DF` | Menu hover row (blue tinted into the panel) |
-| `#BAC5DA` | Menu pressed row          |
-| `#B1B3C1` | Separators, menu border   |
-| `#2959AA` | Accent, URL bar border, hover rail, links |
-| `#234C90` | Button hover (deep blue)  |
-| `#33635C` | New tab accent, active    |
-| `#343B59` | Menu text and link hover text (ink) |
-| `#E6E7ED` | Text on blue              |
+| `#E9E6DF` | Frame, page chrome        |
+| `#E2DED6` | Panels, menus             |
+| `#DBCCBF` | Menu hover row (ember tinted into the panel) |
+| `#D6BFB0` | Menu pressed row          |
+| `#999896` | Separators, menu border   |
+| `#A4441A` | Accent, URL bar border, hover rail, links |
+| `#8B3A16` | Button hover (dark ember)  |
+| `#4C6B45` | New tab accent, active    |
+| `#2B2E36` | Menu text and link hover text (ink) |
+| `#E9E6DF` | Text on ember              |
 
 ## Structure
 
@@ -27,10 +27,10 @@ Stylesheets:
 firefox/
 ├── theme/            WebExtension theme source (Cosmic Ember Day)
 │   ├── manifest.json     DarkGold's 24 colour keys + URL bar ring and selection
-│   └── icons/            32 / 48 / 64 / 96 / 128, blue and green rings on the window colour
+│   └── icons/            32 / 48 / 64 / 96 / 128, ember and moss rings on the window colour
 ├── chrome/
-│   ├── userChrome.css    browser UI: rounded corners, blue menu hover
-│   └── userContent.css   new tab page: blue accents, blank shortcut tiles
+│   ├── userChrome.css    browser UI: rounded corners, ember menu hover
+│   └── userContent.css   new tab page: ember accents, blank shortcut tiles
 └── install.sh            copies chrome/ into the default profile
 ```
 
@@ -38,37 +38,34 @@ Two layers, use one or both:
 
 1. **Theme (colours):** [Cosmic Ember Day](https://addons.mozilla.org/en-US/firefox/addon/cosmic-emberday-theme/) colours the toolbar, tabs, URL bar,
    menus, sidebar and new tab page. This is the main look.
-2. **Stylesheets (optional):** `chrome/` adds rounded corners, blue menu
-   hover, blue accents and a blank new-tab grid on top of the theme. They
+2. **Stylesheets (optional):** `chrome/` adds rounded corners, ember menu
+   hover, ember accents and a blank new-tab grid on top of the theme. They
    also work with Firefox's built-in Light theme.
 
 ## Theme
 
-Same colour keys and roles as DarkGold's Firefox theme and Tokyo Night: icons take the
-calm accent (green here, lime in Tokyo Night, gold in DarkGold), and everything
-"hot" (tab line, pressed button, menu and sidebar selection, loading) takes
-the loud one (blue here, blue in Tokyo Night, coral in DarkGold). Blue `#2959AA`
-reads at 5.5:1 on the frame, so it carries every accent role. One extra key, `toolbar_field_border_focus`, pins the
-focused URL bar ring to blue so it does not fall back to the desktop accent
+The same colour keys and roles as the other rices' Firefox themes: icons take
+the calm accent, moss, and everything "hot" (tab line, pressed button, menu
+and sidebar selection, loading) takes the one ember. Ember `#A4441A` reads at
+4.9:1 on the frame, so it carries every accent role. One extra key, `toolbar_field_border_focus`, pins the
+focused URL bar ring to ember so it does not fall back to the desktop accent
 when `widget.non-native-theme.use-theme-accent` is on (the Firefox default on
 Linux). Two more, `toolbar_field_highlight` and `toolbar_field_highlight_text`,
-colour selected text in the URL bar the same way, as DarkGold does. Every
+colour selected text in the URL bar the same way. Every
 text colour clears WCAG AA (4.5:1) on its background; icons and the tab
 line clear 3:1.
 
 | Hex       | Where in the theme                          |
 |-----------|---------------------------------------------|
-| `#E6E7ED` | Frame, new tab                              |
-| `#DEE0E6` | Toolbar, menus                              |
-| `#ECEDF2` | URL bar field                               |
-| `#E6E7ED` | Text on blue selections                     |
-| `#C9CBD2` | Button hover                                |
-| `#B1B3C1` | Sidebar border                              |
-| `#969AAA` | Menu border                                 |
-| `#343B59` | Body text                                   |
-| `#565C75` | Inactive tab text                           |
-| `#33635C` | Icons                                       |
-| `#2959AA` | Focused URL bar ring and text selection, tab line, pressed button, menu and sidebar selection, loading, attention |
+| `#E9E6DF` | Frame, new tab, text on ember selections   |
+| `#E2DED6` | Toolbar, menus                              |
+| `#E9E6E0` | URL bar field                               |
+| `#D4CFC6` | Button hover, sidebar border                |
+| `#999896` | Menu border                                 |
+| `#2B2E36` | Body text                                   |
+| `#505156` | Inactive tab text                           |
+| `#4C6B45` | Icons                                       |
+| `#A4441A` | Focused URL bar ring and text selection, tab line, pressed button, menu and sidebar selection, loading, attention |
 
 Build the package:
 
@@ -114,8 +111,8 @@ To undo: delete the two files from the profile's `chrome/` folder and restart.
 - **Never set `--panel-*` or `--arrowpanel-*` on `:root`.** Those variables leak
   into the toolbar and blank the URL bar. They stay on the popup elements.
 - **Context menus do not get an extra element border.** A second stroke made
-  the right-click panel look detached. Hover is a blue-tinted `#C8D0DF` row
-  with a 3px blue rail on the left, not a full ring.
+  the right-click panel look detached. Hover is a ember-tinted `#DBCCBF` row
+  with a 3px ember rail on the left, not a full ring.
 - **Native menu styling is switched off** (`appearance: none`) on menus and
   menu rows. Without it the COSMIC/GTK hover paints over the colours above.
 - **`[_moz-menuactive="true"]` is required.** Firefox marks the active

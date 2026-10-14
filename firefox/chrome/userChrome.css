@@ -4,9 +4,9 @@
    palette (light)
 
    Colors from Ember Day:
-     bg #E6E7ED  panel #DEE0E6  menu text #343B59 (ink)  ink #343B59
-     blue #2959AA  border #B1B3C1  deep blue #234C90 (button hover)
-     hover #C8D0DF  pressed #BAC5DA  (blue tinted into the panel)
+     bg #E9E6DF  panel #E2DED6  menu text #2B2E36 (ink)  ink #2B2E36
+     ember #A4441A  border #999896  dark ember #8B3A16 (button hover)
+     hover #DBCCBF  pressed #D6BFB0  (ember tinted into the panel)
 
    No :root overrides - variables stay on the popup they belong to.
 
@@ -21,11 +21,11 @@
 #urlbar-background,
 #searchbar {
   border-radius: 10px !important;
-  border-color: #2959AA !important;
+  border-color: #A4441A !important;
 }
 
 #urlbar[focused="true"] > #urlbar-background {
-  box-shadow: 0 0 10px -3px #2959AA !important;
+  box-shadow: 0 0 10px -3px #A4441A !important;
 }
 
 /* ---------- rounded corners: tabs ---------- */
@@ -54,23 +54,23 @@ toolbarbutton .toolbarbutton-icon {
 #widget-overflow,
 #customizationui-widget-multiview,
 menupopup {
-  --panel-background: #DEE0E6 !important;
-  --panel-color: #343B59 !important;
-  --panel-border-color: #B1B3C1 !important;
+  --panel-background: #E2DED6 !important;
+  --panel-color: #2B2E36 !important;
+  --panel-border-color: #999896 !important;
   --panel-border-radius: 10px !important;
-  --panel-separator-color: #B1B3C1 !important;
-  --panel-item-hover-bgcolor: #C8D0DF !important;
-  --panel-item-active-bgcolor: #BAC5DA !important;
+  --panel-separator-color: #999896 !important;
+  --panel-item-hover-bgcolor: #DBCCBF !important;
+  --panel-item-active-bgcolor: #D6BFB0 !important;
 
-  --arrowpanel-background: #DEE0E6 !important;
-  --arrowpanel-color: #343B59 !important;
-  --arrowpanel-border-color: #B1B3C1 !important;
-  --arrowpanel-dimmed: #C8D0DF !important;
-  --arrowpanel-dimmed-further: #BAC5DA !important;
+  --arrowpanel-background: #E2DED6 !important;
+  --arrowpanel-color: #2B2E36 !important;
+  --arrowpanel-border-color: #999896 !important;
+  --arrowpanel-dimmed: #DBCCBF !important;
+  --arrowpanel-dimmed-further: #D6BFB0 !important;
 
   /* newer Firefox panel vars (v140+) */
-  --panel-background-color: #DEE0E6 !important;
-  --panel-text-color: #343B59 !important;
+  --panel-background-color: #E2DED6 !important;
+  --panel-text-color: #2B2E36 !important;
 }
 
 /* Firefox's own accent (Sign in button, toggles, focus rings) inside the
@@ -81,14 +81,14 @@ menupopup {
 #protections-popup,
 #identity-popup,
 menupopup {
-  --color-accent-primary: #2959AA !important;
-  --color-accent-primary-hover: #234C90 !important;
-  --color-accent-primary-active: #234C90 !important;
-  --button-background-color-primary: #2959AA !important;
-  --button-background-color-primary-hover: #234C90 !important;
-  --button-background-color-primary-active: #234C90 !important;
-  --button-text-color-primary: #E6E7ED !important;
-  --focus-outline-color: #2959AA !important;
+  --color-accent-primary: #A4441A !important;
+  --color-accent-primary-hover: #8B3A16 !important;
+  --color-accent-primary-active: #8B3A16 !important;
+  --button-background-color-primary: #A4441A !important;
+  --button-background-color-primary-hover: #8B3A16 !important;
+  --button-background-color-primary-active: #8B3A16 !important;
+  --button-text-color-primary: #E9E6DF !important;
+  --focus-outline-color: #A4441A !important;
 }
 
 /* Drop GTK/native menuitem chrome so background-color actually paints.
@@ -116,7 +116,7 @@ menupopup menu {
 }
 
 /* hover / keyboard-active row
-   Blue-tinted fill + ink text + slim blue rail so the pointer
+   Ember-tinted fill + ink text + slim ember rail so the pointer
    position is obvious without leaving Ember Day. */
 #appMenu-popup .subviewbutton:not([disabled]):hover,
 #widget-overflow .subviewbutton:not([disabled]):hover,
@@ -130,25 +130,25 @@ menupopup menu[_moz-menuactive="true"]:not([disabled]),
 #contentAreaContextMenu menu[_moz-menuactive="true"]:not([disabled]),
 #context-navigation menuitem:not([disabled]):hover,
 #context-navigation menuitem[_moz-menuactive="true"]:not([disabled]) {
-  background-color: #C8D0DF !important;
-  color: #343B59 !important;
-  box-shadow: inset 3px 0 0 #2959AA !important;
+  background-color: #DBCCBF !important;
+  color: #2B2E36 !important;
+  box-shadow: inset 3px 0 0 #A4441A !important;
   outline: none !important;
 }
 
-/* access-key underline (the S in Save, A in As) - ink on hover, blue underline */
+/* access-key underline (the S in Save, A in As) - ink on hover, ember underline */
 menupopup menuitem[_moz-menuactive="true"] .menu-text,
 menupopup menu[_moz-menuactive="true"] .menu-text,
 menupopup menuitem:hover .menu-text,
 menupopup menu:hover .menu-text {
-  color: #343B59 !important;
-  text-decoration-color: #2959AA !important;
+  color: #2B2E36 !important;
+  text-decoration-color: #A4441A !important;
 }
 
 /* separators */
 #appMenu-popup toolbarseparator,
 menupopup menuseparator {
-  border-top: 1px solid #B1B3C1 !important;
+  border-top: 1px solid #999896 !important;
   -moz-appearance: none !important;
   appearance: none !important;
 }
@@ -161,9 +161,9 @@ menupopup menuseparator {
 #customizationui-widget-multiview,
 #protections-popup,
 #identity-popup {
-  border: 1px solid #B1B3C1 !important;
+  border: 1px solid #999896 !important;
   border-radius: 10px !important;
-  background-color: #DEE0E6 !important;
+  background-color: #E2DED6 !important;
   padding: 0 !important;
 }
 
@@ -173,5 +173,5 @@ menupopup menuseparator {
 #appMenu-multiView,
 #widget-overflow .panel-subview-body {
   border-radius: 10px !important;
-  background-color: #DEE0E6 !important;
+  background-color: #E2DED6 !important;
 }

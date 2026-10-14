@@ -4,8 +4,8 @@
    palette (light)
 
    New tab / home / private pages only:
-     - blue accent and focus, blue links with ink on hover
-     - blue focus ring on shortcut tiles, blue personalize button
+     - ember accent and focus, ember links with ink on hover
+     - ember focus ring on shortcut tiles, ember personalize button
      - shortcut artwork hidden (tiles stay, icons go blank)
    No size / position changes.
 
@@ -17,41 +17,41 @@
                url-prefix("about:privatebrowsing") {
 
   :root {
-    --newtab-primary-action-background: #2959AA !important;
-    --newtab-primary-action-background-dimmed: rgba(149, 59, 25, 0.25) !important;
+    --newtab-primary-action-background: #A4441A !important;
+    --newtab-primary-action-background-dimmed: rgba(164, 68, 26, 0.25) !important;
 
-    --color-accent-primary: #2959AA !important;
-    --color-accent-primary-hover: #234C90 !important;
-    --color-accent-primary-active: #234C90 !important;
+    --color-accent-primary: #A4441A !important;
+    --color-accent-primary-hover: #8B3A16 !important;
+    --color-accent-primary-active: #8B3A16 !important;
 
-    --newtab-focus-border: #2959AA !important;
-    --newtab-focus-outline: #2959AA !important;
-    --newtab-textbox-focus-color: #2959AA !important;
+    --newtab-focus-border: #A4441A !important;
+    --newtab-focus-outline: #A4441A !important;
+    --newtab-textbox-focus-color: #A4441A !important;
 
-    --in-content-accent-color: #2959AA !important;
-    --in-content-accent-color-active: #33635C !important;
-    --in-content-focus-outline-color: #2959AA !important;
+    --in-content-accent-color: #A4441A !important;
+    --in-content-accent-color-active: #4C6B45 !important;
+    --in-content-focus-outline-color: #A4441A !important;
 
-    --link-color: #2959AA !important;
-    --link-color-hover: #343B59 !important;
+    --link-color: #A4441A !important;
+    --link-color-hover: #2B2E36 !important;
 
-    --focus-outline-color: #2959AA !important;
-    --focus-outline: 2px solid #2959AA !important;
-    --newtab-button-focus-border: #2959AA !important;
-    --button-background-color: #2959AA !important;
-    --button-text-color: #E6E7ED !important;
+    --focus-outline-color: #A4441A !important;
+    --focus-outline: 2px solid #A4441A !important;
+    --newtab-button-focus-border: #A4441A !important;
+    --button-background-color: #A4441A !important;
+    --button-text-color: #E9E6DF !important;
   }
 
   .top-site-outer:is(:focus, :focus-visible, .active) .tile,
   .top-site-outer .top-site-button:focus .tile,
   .top-site-outer .top-site-button:focus-visible .tile {
-    outline: 2px solid #2959AA !important;
-    border-color: #2959AA !important;
+    outline: 2px solid #A4441A !important;
+    border-color: #A4441A !important;
   }
 
   .personalize-button {
-    background-color: #2959AA !important;
-    color: #E6E7ED !important;
+    background-color: #A4441A !important;
+    color: #E9E6DF !important;
   }
 
   /* Hide shortcut artwork so tiles stay blank */
