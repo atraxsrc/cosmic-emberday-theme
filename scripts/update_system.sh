@@ -3,23 +3,22 @@ set -eo pipefail
 
 # ─────────────────────────────────────────────
 #  Ember Day palette (light terminal)
-#  pane:    #D6D8DF   fg:      #343B59   (terminal pane; window bg #E6E7ED)
-#  blue:    #2959AA   green:   #33635C
-#  yellow:  #8F5E15   red:     #8C4351
-#  ink:     #2C324B   muted:   #707280
-#  comment: #888B94
+#  pane:    #DDD9D1   fg:      #2B2E36   (terminal pane; window bg #E9E6DF)
+#  ember:   #A4441A   moss:    #4C6B45
+#  amber:   #8A5E12   brick:   #9E3A3A
+#  muted:   #6B6F78   comment: #8C9099
 # ─────────────────────────────────────────────
 
 # Ember Day - using $'...' so escape bytes are stored at assignment time
 # and work correctly with both echo -e and printf "%s"
-CYAN=$'\033[38;2;44;50;75m'      # #2C324B  - section headers (ink)
-BLUE=$'\033[38;2;41;89;170m'     # #2959AA  - info / commands
-PURPLE=$'\033[38;2;123;67;186m'  # #7B43BA  - highlights
-GREEN=$'\033[38;2;51;99;92m'     # #33635C  - success
-YELLOW=$'\033[38;2;143;94;21m'   # #8F5E15  - warnings
-ORANGE=$'\033[38;2;112;114;128m' # #707280  - skipped (muted)
-RED=$'\033[38;2;140;67;81m'      # #8C4351  - errors
-DIM=$'\033[38;2;136;139;148m'    # #888B94  - comments / dim text
+CYAN=$'\033[38;2;43;46;54m'      # #2B2E36  - section headers (text)
+BLUE=$'\033[38;2;164;68;26m'     # #A4441A  - info / commands (ember)
+PURPLE=$'\033[38;2;110;78;140m'   # #6E4E8C  - highlights (heather)
+GREEN=$'\033[38;2;76;107;69m'     # #4C6B45  - success (moss)
+YELLOW=$'\033[38;2;138;94;18m'   # #8A5E12  - warnings (amber)
+ORANGE=$'\033[38;2;107;111;120m'   # #6B6F78  - skipped (muted)
+RED=$'\033[38;2;158;58;58m'      # #9E3A3A  - errors (brick)
+DIM=$'\033[38;2;140;144;153m'      # #8C9099  - comments / dim text
 BOLD=$'\033[1m'
 RESET=$'\033[0m'
 
@@ -126,8 +125,8 @@ update_snap() {
 # ── Logo ───────────────────────────────────────────────────────────────────────
 
 # Logo rule colours (ink, blue) - global scope so $'...' escapes work correctly
-TEAL=$'\033[38;2;44;50;75m'     # #2C324B  ink, logo rule left half
-ORG=$'\033[38;2;41;89;170m'     # #2959AA  blue, logo rule right half
+TEAL=$'\033[38;2;43;46;54m'    # #2B2E36  text (left half of the rule)
+ORG=$'\033[38;2;164;68;26m'    # #A4441A  ember (right half of the rule)
 
 # Banner rows, ANSI Shadow figlet font. All 46 columns wide; keep them that way
 # or the gradient below will drift out of alignment with the letterforms.
@@ -140,17 +139,16 @@ LOGO_ROWS=(
     ' ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝  ╚═══╝   ╚═╝'
 )
 
-# Per-column colours for the banner: ink → blue, left to right.
-# Ink like the fastfetch logo; blue stays for small text. One entry per column, 46 total.
+# Per-column colours for the banner: text to ember, left to right. One entry per column, 46 total.
 LOGO_GRAD=(
-    "52;59;89" "52;60;91" "52;60;93" "51;61;94" "51;62;96" "51;62;98"
-    "51;63;100" "50;64;102" "50;64;103" "50;65;105" "50;66;107" "49;66;109"
-    "49;67;111" "49;68;112" "49;68;114" "48;69;116" "48;70;118" "48;70;120"
-    "48;71;121" "47;72;123" "47;72;125" "47;73;127" "47;74;129" "46;74;130"
-    "46;75;132" "46;76;134" "46;76;136" "45;77;138" "45;78;139" "45;78;141"
-    "45;79;143" "44;80;145" "44;80;147" "44;81;148" "44;82;150" "43;82;152"
-    "43;83;154" "43;84;156" "43;84;157" "42;85;159" "42;86;161" "42;86;163"
-    "42;87;165" "41;88;166" "41;88;168" "41;89;170"
+    "43;46;54" "46;46;53" "48;47;53" "51;47;52" "54;48;52" "56;48;51"
+    "59;49;50" "62;49;50" "65;50;49" "67;50;48" "70;51;48" "73;51;47"
+    "75;52;47" "78;52;46" "81;53;45" "83;53;45" "86;54;44" "89;54;43"
+    "91;55;43" "94;55;42" "97;56;42" "99;56;41" "102;57;40" "105;57;40"
+    "108;58;39" "110;58;38" "113;59;38" "116;59;37" "118;60;37" "121;60;36"
+    "124;61;35" "126;61;35" "129;62;34" "132;62;33" "134;63;33" "137;63;32"
+    "140;64;32" "142;64;31" "145;65;30" "148;65;30" "151;66;29" "153;66;28"
+    "156;67;28" "159;67;27" "161;68;27" "164;68;26"
 )
 
 # Draw the banner one character at a time, colouring by column index so the
