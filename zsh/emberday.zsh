@@ -6,46 +6,44 @@
 # Keep machine-specific or private lines (PATH, scaling, nvm, ...) in your
 # own ~/.zshrc, not here.
 #
-#  pane:    #D6D8DF   fg:      #343B59   (terminal pane; window bg #E6E7ED)
-#  blue:    #2959AA   green:   #33635C
-#  yellow:  #8F5E15   red:     #8C4351
-#  purple:  #7B43BA   cyan:    #006C86
-#  muted:   #707280   comment: #888B94   string: #385F0D
-#
-# Light terminal: every colour here is dark enough to read on the pane.
+#  pane:    #DDD9D1   fg:      #2B2E36   (terminal pane; window bg #E9E6DF)
+#  ember:   #A4441A   moss:    #4C6B45
+#  amber:   #8A5E12   brick:   #9E3A3A
+#  slate:   #2F5C8A   heather: #6E4E8C   verdigris: #2E6E6A
+#  muted:   #6B6F78   comment: #8C9099
 
 # ── File colours (ls, lsd file names, completion menu) ─────────────────────────
 
-export LS_COLORS="di=1;38;2;41;89;170:ln=3;38;2;0;108;134:ex=1;38;2;51;99;92:*.zip=4;38;2;143;94;21:*.tar=4;38;2;143;94;21:*.gz=4;38;2;143;94;21:*.xz=4;38;2;143;94;21:*.7z=4;38;2;143;94;21:*.deb=4;38;2;143;94;21:*.png=38;2;123;67;186:*.jpg=38;2;123;67;186:*.jpeg=38;2;123;67;186:*.webp=38;2;123;67;186:*.gif=38;2;123;67;186:*.mp4=3;38;2;123;67;186:*.mkv=3;38;2;123;67;186:*.rs=38;2;51;99;92:*.py=38;2;51;99;92:*.js=38;2;51;99;92:*.ts=38;2;51;99;92:*.sh=38;2;51;99;92:*.md=38;2;52;59;89:*.txt=38;2;52;59;89:or=9;38;2;140;67;81"
+export LS_COLORS="di=1;38;2;47;92;138:ln=3;38;2;46;110;106:ex=1;38;2;76;107;69:*.zip=4;38;2;138;94;18:*.tar=4;38;2;138;94;18:*.gz=4;38;2;138;94;18:*.xz=4;38;2;138;94;18:*.7z=4;38;2;138;94;18:*.deb=4;38;2;138;94;18:*.png=38;2;110;78;140:*.jpg=38;2;110;78;140:*.jpeg=38;2;110;78;140:*.webp=38;2;110;78;140:*.gif=38;2;110;78;140:*.mp4=3;38;2;110;78;140:*.mkv=3;38;2;110;78;140:*.rs=38;2;76;107;69:*.py=38;2;76;107;69:*.js=38;2;76;107;69:*.ts=38;2;76;107;69:*.sh=38;2;76;107;69:*.md=38;2;43;46;54:*.txt=38;2;43;46;54:or=9;38;2;158;58;58"
 
 # oh-my-zsh reads LS_COLORS before this file loads, so refresh the menu colours
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # ── zsh-autosuggestions / zsh-syntax-highlighting ──────────────────────────────
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#9FA2AA'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#A4A6AA'
 
 typeset -gA ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[command]='fg=#2959AA'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=#2959AA'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=#2959AA'
-ZSH_HIGHLIGHT_STYLES[function]='fg=#2959AA'
-ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=#2959AA'
-ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#2959AA,underline'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=#33635C,underline'
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#343B59,bold'
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#8C4351,bold,underline'
-ZSH_HIGHLIGHT_STYLES[path]='fg=#2C324B,underline'
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=#8F5E15'
-ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=#8F5E15'
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#707280'
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#707280'
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#385F0D'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#385F0D'
-ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=#385F0D'
-ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=#707280'
-ZSH_HIGHLIGHT_STYLES[redirection]='fg=#707280'
-ZSH_HIGHLIGHT_STYLES[comment]='fg=#888B94'
+ZSH_HIGHLIGHT_STYLES[command]='fg=#A4441A'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=#A4441A'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#A4441A'
+ZSH_HIGHLIGHT_STYLES[function]='fg=#A4441A'
+ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=#A4441A'
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#A4441A,underline'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=#4C6B45,underline'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#2B2E36,bold'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#9E3A3A,bold,underline'
+ZSH_HIGHLIGHT_STYLES[path]='fg=#2B2E36,underline'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=#8A5E12'
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=#8A5E12'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#6B6F78'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#6B6F78'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#4C6B45'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=#4C6B45'
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=#4C6B45'
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=#6B6F78'
+ZSH_HIGHLIGHT_STYLES[redirection]='fg=#6B6F78'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=#8C9099'
 
 # ── Aliases (only when the tool is installed) ──────────────────────────────────
 
