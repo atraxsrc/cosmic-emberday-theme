@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Recolour one wallpaper with the repo palette, every colour included.
+"""Recolour one wallpaper with the repo palette.
 
     python3 scripts/wallpaper.py night [--accent NAME] GREY.png OUT.png
     python3 scripts/wallpaper.py day   [--accent NAME] GREY.png OUT.png
@@ -23,11 +23,8 @@ its rank inside the subject runs it along one ramp:
     ember    the brightest (night) or boldest (day) strokes
     text     the strongest lines
 
-The colours the subject does not use sit in a small swatch strip in the
-bottom right, one square per palette colour, on a plate of window colour.
-Blends between roles are mixed in OKLab; every role holds a flat band, so
-each palette colour is present as its exact hex, and the corners stay on
-the window.
+Blends between roles are mixed in OKLab and every role holds a flat band,
+so each one lands on its exact hex, and the corners stay on the window.
 """
 import glob
 import os
@@ -135,21 +132,6 @@ def rank(ink, subject):
     return np.where(subject, 0.2 + 0.8 * mid[bins], ink).astype(np.float32)
 
 
-def strip(img, pal, size=40, gap=12, pad=28, margin=160):
-    """One square per palette colour but the window, bottom right: neutrals from
-    the window out, then the colours round the wheel. Draws on img in place."""
-    window = pal["Window"]
-    neutrals = sorted(["Pane", "Container", "Comment", "Muted", "Text"],
-                      key=lambda k: np.abs(pal[k] - window).sum())
-    names = neutrals + ACCENTS
-    w = len(names) * size + (len(names) - 1) * gap
-    x0, y0 = W - margin - w, H - margin - size
-    img[y0 - pad:y0 + size + pad, x0 - pad:x0 + w + pad] = window
-    for n, k in enumerate(names):
-        x = x0 + n * (size + gap)
-        img[y0:y0 + size, x:x + size] = pal[k]
-
-
 def render(mode, ink, pal, accent="Slate blue"):
     lab = {k: to_lab(v) for k, v in pal.items()}
     subject = ink > 0.2
@@ -165,23 +147,13 @@ def render(mode, ink, pal, accent="Slate blue"):
         m = ink > a
         w = smooth((ink[m] - a) / (b - a))[:, None]
         out[m] = lab[ca] + (lab[cb] - lab[ca]) * w
-    img = from_lab(out.reshape(-1, 3)).reshape(H, W, 3)
-    strip(img, pal)
-    return img
+    return from_lab(out.reshape(-1, 3)).reshape(H, W, 3)
 
 
-def check(img, pal, path, corners=True):
-    flat = img.reshape(-1, 3)
-    missing = []
-    for k, v in pal.items():
-        n = int(np.all(flat == v.astype(np.uint8), axis=1).sum())
-        if n < 500:
-            missing.append(f"{k} ({n} px)")
+def check(img, pal, path):
     edge = [img[0, 0], img[0, -1], img[-1, 0], img[-1, -1]]
-    if corners and any((c != pal["Window"]).any() for c in edge):
-        missing.append("window corners")
-    if missing:
-        sys.exit(f"{path}: short of " + ", ".join(missing))
+    if any((c != pal["Window"]).any() for c in edge):
+        sys.exit(f"{path}: a corner is off the window colour")
 
 
 def main(argv):

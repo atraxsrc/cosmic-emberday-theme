@@ -9,8 +9,8 @@
 # grey and inverted when its mean luminance is above 0.5 for night (ink-on-paper
 # sources) or below 0.5 for day (dark sources). wallpaper.py then maps the grey
 # onto backgrounds/*.gpl: window paper, comment and muted shadows, slate blue
-# for the body, ember on the brightest strokes, text on the strongest lines,
-# and a swatch strip of every palette colour. See its docstring.
+# for the body, ember on the brightest strokes, text on the strongest lines.
+# See its docstring.
 set -euo pipefail
 
 mode="${1:-}"; src="${2:-}"; out="${3:-}"
