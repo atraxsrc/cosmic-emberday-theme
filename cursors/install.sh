@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Install an Oxygen-EmberDay-<Variant> cursor from this repo and make it active.
 #
-#   ./cursors/install.sh                  # Blue (default) + activate
-#   ./cursors/install.sh --variant Purple  # another colour, see --list
+#   ./cursors/install.sh                  # Ember (default) + activate
+#   ./cursors/install.sh --variant Moss  # another colour, see --list
 #   ./cursors/install.sh --user           # theme to ~/.local/share/icons
 #   ./cursors/install.sh --size 32        # cursor size (default 24)
 #
@@ -16,8 +16,8 @@ set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RICE="EmberDay"
-VARIANTS=(Blue Purple Green Ink)
-VARIANT="Blue"
+VARIANTS=(Ember Moss Slate Ink)
+VARIANT="Ember"
 SIZE="${XCURSOR_SIZE_OVERRIDE:-24}"
 DEST="/usr/share/icons"
 USER_MODE=false

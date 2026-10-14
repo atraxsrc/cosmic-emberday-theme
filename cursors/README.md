@@ -3,15 +3,18 @@
 **Oxygen** cursors (the original KDE Oxygen designs, as collected by
 [wo2ni/Oxygen-Cursors](https://github.com/wo2ni/Oxygen-Cursors)) recoloured to this
 rice's icon colours: one per folder colour of the
-[Cosmic-EmberDay](https://github.com/atraxsrc/cosmic-icon-themes) icon pack, **Blue**, **Purple**, **Green**, **Ink**.
+[Cosmic-EmberDay](https://github.com/atraxsrc/cosmic-icon-themes) icon pack, **Ember**, **Moss**, **Slate**, **Ink**.
 All patched so they work in COSMIC's own apps.
 
-| Variant | Preview | Body | Contrast on `#E6E7ED` | Goes with |
+| Variant | Preview | Body | Contrast on `#E9E6DF` | Goes with |
 | ------- | ------- | ---- | ------------------- | --------- |
-| **Blue** (default) | ![](../assets/cursors/Oxygen-EmberDay-Blue.png) | `#2959AA` | 5.5:1 | Blue folders |
-| **Purple** | ![](../assets/cursors/Oxygen-EmberDay-Purple.png) | `#7B43BA` | 5.1:1 | Purple folders |
-| **Green** | ![](../assets/cursors/Oxygen-EmberDay-Green.png) | `#33635C` | 5.5:1 | Green folders |
-| **Ink** | ![](../assets/cursors/Oxygen-EmberDay-Ink.png) | `#343B59` | 8.9:1 | Ink folders |
+| **Ember** (default) | ![](../assets/cursors/Oxygen-EmberDay-Ember.png) | `#A4441A` | 4.9:1 | Ember folders |
+| **Moss** | ![](../assets/cursors/Oxygen-EmberDay-Moss.png) | `#4C6B45` | 4.8:1 | Moss folders |
+| **Slate** | ![](../assets/cursors/Oxygen-EmberDay-Slate.png) | `#2F5C8A` | 5.6:1 | Slate folders |
+| **Ink** | ![](../assets/cursors/Oxygen-EmberDay-Ink.png) | `#2B2E36` | 10.9:1 | Ink folders |
+
+Ink is the text colour as a cursor body: the strongest contrast of the four,
+and the one that reads as plain black at a glance.
 
 Each variant is a normal folder here (`Oxygen-EmberDay-<Variant>/index.theme` + `cursors/`),
 already fixed for COSMIC. Nothing is downloaded at install time.
@@ -22,9 +25,9 @@ black outline and shadow stay as they are, and the COSMIC symlinks are carried o
 Any coloured variant works as the base. To add a colour:
 
 ```bash
-../cosmic-darkgold-theme/cursors/recolour.py --base cursors/Oxygen-EmberDay-Blue \
+../cosmic-darkgold-theme/cursors/recolour.py --base cursors/Oxygen-EmberDay-Ember \
   --out cursors/Oxygen-EmberDay-Teal --name "Oxygen EmberDay Teal" --colour '#006C86' \
-  --preview assets/cursors/Oxygen-EmberDay-Teal.png --bg '#E6E7ED'
+  --preview assets/cursors/Oxygen-EmberDay-Teal.png --bg '#E9E6DF'
 ```
 
 then add `Teal` to `VARIANTS` in `install.sh` and `uninstall.sh`.
@@ -34,8 +37,8 @@ then add `Teal` to `VARIANTS` in `install.sh` and `uninstall.sh`.
 COSMIC has no cursor picker yet, so the script sets it.
 
 ```bash
-./cursors/install.sh                      # Blue
-./cursors/install.sh --variant Purple    # another colour, see --list
+./cursors/install.sh                      # Ember
+./cursors/install.sh --variant Moss      # another colour, see --list
 reboot
 ```
 
@@ -43,7 +46,7 @@ Options:
 
 | Option | Effect |
 | ------ | ------ |
-| `--variant NAME` | Which colour, default `Blue`; `--list` prints them |
+| `--variant NAME` | Which colour, default `Ember`; `--list` prints them |
 | `--user` | Theme goes to `~/.local/share/icons` instead of `/usr/share/icons` (no sudo for the files; `/etc/environment` still needs it) |
 | `--size N` | Cursor size, default 24 (`XCURSOR_SIZE_OVERRIDE=N` works too) |
 

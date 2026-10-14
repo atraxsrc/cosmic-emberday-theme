@@ -9,7 +9,7 @@
 set -euo pipefail
 
 RICE="EmberDay"
-VARIANTS=(Blue Purple Green Ink)
+VARIANTS=(Ember Moss Slate Ink)
 SYS="/usr/share/icons"
 USR="$HOME/.local/share/icons"
 STAMP="$(date +%Y%m%d-%H%M%S)"
