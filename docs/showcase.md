@@ -1,6 +1,6 @@
 # Ember Day
 
-> Lavender grey, ink and blue. The light half of Tokyo Night / Ember Day.
+> Stone, ink and one ember. The light half of Ember / Ember Day.
 
 Pop!_OS 24.04 on the COSMIC desktop, one palette carried through the whole
 machine: desktop, terminal, shell, editor, browser. This note is the rice
@@ -8,21 +8,21 @@ describing itself, written in Markdown and rendered by **Postilla**.
 
 ## Palette
 
-Every text colour is checked against the window background `#E6E7ED`.
+Every text colour is checked against the window background `#E9E6DF`.
 
 | Role | Hex | Contrast on background |
 |------|-----|------------------------|
-| Text | `#343B59` | 8.9:1 |
-| Blue, accent | `#2959AA` | 5.5:1 |
-| Green, success | `#33635C` | 5.5:1 |
-| Yellow, warning | `#8F5E15` | 4.5:1 |
-| Red, error | `#8C4351` | 5.6:1 |
-| Purple | `#7B43BA` | 5.1:1 |
-| Cyan, symlinks | `#006C86` | 4.9:1 |
+| Text | `#2B2E36` | 10.9:1 |
+| Ember, accent | `#A4441A` | 4.9:1 |
+| Moss, success | `#4C6B45` | 4.8:1 |
+| Amber, warning | `#8A5E12` | 4.6:1 |
+| Brick, error | `#9E3A3A` | 5.4:1 |
+| Heather, magenta | `#6E4E8C` | 5.4:1 |
+| Verdigris, symlinks | `#2E6E6A` | 4.7:1 |
 
-Containers sit one step away from the background at `#DEE0E6`, which is
+Containers sit one step away from the background at `#E2DED6`, which is
 what frosted glass blurs into. The terminal is the exception: an opaque pane
-at `#D6D8DF`, a step darker than the desktop.
+at `#DDD9D1`, one step darker than the desktop.
 
 ## Where the colours go
 
@@ -42,9 +42,9 @@ flowchart LR
 - [x] Import `cosmic-term/EmberDay-term.ron`, pick **Ember Day** for the profile
 - [x] `./icons/install.sh` for the **Cosmic-EmberDay** icons, `./cosmic/install.sh` for fonts and the terminal look
 - [x] `./zsh/install.sh`, `./lsd/install.sh`, `./fastfetch/install.sh`
-- [x] Cursor: Oxygen-EmberDay-Blue
-- [x] Wallpaper: `backgrounds/emberday-car.png`
-- [x] Screenshot for the README
+- [x] Cursor: Oxygen-EmberDay-Ember
+- [x] Wallpaper: `backgrounds/emberday-astronaut.png`
+- [ ] Screenshot for the README
 
 ## The baseline every rice shares
 
