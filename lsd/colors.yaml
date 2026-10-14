@@ -1,41 +1,41 @@
 # 256-colour codes nearest the Ember Day palette on the pane (lsd 1.0.0 does
-# not accept #hex here): 25 blue, 24 cyan, 23 green, 94 yellow, 95 red,
-# 97 purple, 243 muted, 245 comment, 238 ink.
-user: 25
-group: 243
+# not accept #hex here): 130 ember, 65 moss, 94 amber, 131 brick,
+# 24 slate blue, 60 heather, 23 verdigris, 242 muted, 246 comment, 236 text.
+user: 130
+group: 242
 permission:
-  read: 243
+  read: 242
   write: 94
-  exec: 95
-  exec-sticky: 95
-  no-access: 245
-  octal: 238
-  acl: 238
-  context: 238
+  exec: 131
+  exec-sticky: 131
+  no-access: 246
+  octal: 236
+  acl: 236
+  context: 236
 date:
-  hour-old: 25
-  day-old: 23
-  older: 245
+  hour-old: 130
+  day-old: 65
+  older: 246
 size:
-  none: 245
-  small: 23
+  none: 246
+  small: 65
   medium: 94
-  large: 95
+  large: 131
 inode:
-  valid: 23
-  invalid: 95
+  valid: 65
+  invalid: 131
 links:
-  valid: 238
-  invalid: 95
-tree-edge: 245
+  valid: 236
+  invalid: 131
+tree-edge: 246
 git-status:
-  default: 245
-  unmodified: 245
-  ignored: 245
-  new-in-index: 23
-  new-in-workdir: 23
+  default: 246
+  unmodified: 246
+  ignored: 246
+  new-in-index: 65
+  new-in-workdir: 65
   typechange: 94
-  deleted: 95
-  renamed: 238
-  modified: 25
-  conflicted: 95
+  deleted: 131
+  renamed: 236
+  modified: 130
+  conflicted: 131
