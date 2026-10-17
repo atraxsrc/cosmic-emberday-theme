@@ -1,0 +1,46 @@
+{
+  "name": "cosmic-ember-theme",
+  "displayName": "Cosmic Ember / Cosmic Ember Day",
+  "description": "Dark and light colour themes from the COSMIC Ember / Ember Day rice pair, syntax as in their Neovim schemes.",
+  "version": "1.0.0",
+  "publisher": "atraxsrc",
+  "license": "MIT",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#15171C",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atraxsrc/cosmic-ember-theme"
+  },
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "light",
+    "cosmic",
+    "ember",
+    "ember-day",
+    "cursor"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Cosmic Ember",
+        "uiTheme": "vs-dark",
+        "path": "./themes/cosmic-ember-color-theme.json"
+      },
+      {
+        "label": "Cosmic Ember Day",
+        "uiTheme": "vs",
+        "path": "./themes/cosmic-ember-day-color-theme.json"
+      }
+    ]
+  }
+}
