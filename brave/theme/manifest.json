@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Cosmic Ember Day",
+  "version": "1.0",
+  "description": "Warm stone light theme from the COSMIC Ember Day rice: moss icons, one ember accent.",
+  "icons": {
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "theme": {
+    "colors": {
+      "frame": [233, 230, 223],
+      "frame_inactive": [233, 230, 223],
+      "frame_incognito": [233, 230, 223],
+      "frame_incognito_inactive": [233, 230, 223],
+      "background_tab": [233, 230, 223],
+      "background_tab_inactive": [233, 230, 223],
+      "background_tab_incognito": [233, 230, 223],
+      "background_tab_incognito_inactive": [233, 230, 223],
+      "toolbar": [226, 222, 214],
+      "tab_text": [164, 68, 26],
+      "tab_background_text": [76, 107, 69],
+      "tab_background_text_inactive": [76, 107, 69],
+      "tab_background_text_incognito": [76, 107, 69],
+      "tab_background_text_incognito_inactive": [76, 107, 69],
+      "bookmark_text": [43, 46, 54],
+      "toolbar_button_icon": [76, 107, 69],
+      "omnibox_background": [233, 230, 224],
+      "omnibox_text": [43, 46, 54],
+      "ntp_background": [233, 230, 223],
+      "ntp_text": [43, 46, 54],
+      "ntp_link": [164, 68, 26]
+    }
+  }
+}

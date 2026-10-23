@@ -3,7 +3,7 @@
 # COSMIC · Ember Day
 
 Pop!_OS 24.04 on COSMIC in Ember Day warm stone, ink and one ember accent: desktop,
-terminal, shell, editor, Firefox, cursor, wallpapers. The light half of a pair;
+terminal, shell, editor, Firefox, Brave, cursor, wallpapers. The light half of a pair;
 the dark half is [cosmic-ember-theme](https://github.com/atraxsrc/cosmic-ember-theme).
 
 ![Pop!_OS](https://img.shields.io/badge/Pop!_OS-24.04_LTS-a4441a?style=for-the-badge&logo=popos&logoColor=white)
@@ -58,6 +58,9 @@ Window hint `#A4441A`. Ratios per role are in `docs/showcase.md`, or run
 
 ```
 .
+├── brave
+│   ├── theme                    # Chromium theme (manifest + icons), Load unpacked
+│   └── README.md
 ├── btop
 │   └── EmberDay.theme           # btop colour theme
 ├── claude-desktop
@@ -207,6 +210,20 @@ Two layers:
 ```
 
 Fully quit Firefox afterward. Details and CSS rules: [`firefox/README.md`](firefox/README.md).
+
+---
+
+## Brave
+
+`brave/theme` is a Chromium theme with the Firefox theme's colours: warm stone
+frame, sandstone toolbar, moss icons and inactive tabs, ember on the active tab.
+Brave, Chrome, Chromium and Edge take it, and it loads straight from the
+clone, so no Chrome Web Store or Google account is needed:
+
+`brave://extensions` → **Developer mode** → **Load unpacked** → `brave/theme`
+
+Leave the clone in place, Brave keeps reading the folder. Colours, limits and
+packing a `.crx`: [`brave/README.md`](brave/README.md).
 
 ---
 
@@ -447,6 +464,8 @@ cd cosmic-emberday-theme
 
 # optional extra chrome
 ./firefox/install.sh
+
+# brave: brave://extensions → Developer mode → Load unpacked → brave/theme
 
 # claude desktop (claude-desktop-extra), then Ctrl+Shift+T
 ./claude-desktop/install.sh
