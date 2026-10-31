@@ -569,8 +569,7 @@ puts the Pop cursor back.
 ## Credits
 
 - Palette: Ember, designed for this pair (see `docs/superpowers/specs/2026-10-14-ember-design.md` in cosmic-ember-theme).
-- Subjects: [cool-wallpapers](https://github.com/atraxsrc/cool-wallpapers); the eagle from
-  [omarchy-thegreek-theme](https://github.com/HANCORE-linux/omarchy-thegreek-theme) (MIT).
+- Subjects: [cool-wallpapers](https://github.com/atraxsrc/cool-wallpapers), the eagle included (MIT).
 - Templates: [cosmic-tokyonight-theme](https://github.com/atraxsrc/cosmic-tokyonight-theme) and
   [cosmic-tokyoday-theme](https://github.com/atraxsrc/cosmic-tokyoday-theme).
   Shared baseline (frosted glass, squared corners, fonts) from

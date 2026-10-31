@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Render one Ember wallpaper from a source image with ImageMagick 6.
 #
-#   ./scripts/wallpaper.sh night ../cool-wallpapers/omarchy/the-greek/the-greek-bg1-3840x2160.jpg backgrounds/ember-eagle.png
-#   ./scripts/wallpaper.sh day   ../cool-wallpapers/omarchy/the-greek/the-greek-bg1-3840x2160.jpg backgrounds/emberday-eagle.png
+#   ./scripts/wallpaper.sh night ../cool-wallpapers/the-greek/the-greek-bg1-3840x2160.jpg backgrounds/ember-eagle.png
+#   ./scripts/wallpaper.sh day   ../cool-wallpapers/the-greek/the-greek-bg1-3840x2160.jpg backgrounds/emberday-eagle.png
 #
 # The source is converted to grey, inverted when its mean luminance is above
 # 0.5 for night (ink-on-paper sources) or below 0.5 for day (dark sources),
