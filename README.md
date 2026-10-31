@@ -116,8 +116,10 @@ Window hint ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`. 
 │   └── install.sh
 ├── assets
 │   ├── cursors/                 # cursor preview
+│   ├── cosmic-term/             # scheme previews for cosmic-term/README.md
 │   ├── palette.png              # the 16 terminal colours, under the title
-│   └── screenshot.png           # README screenshot
+│   ├── screenshot.png           # README screenshot
+│   └── wallpaper.png            # the anime portrait at 2560x1440
 ├── backgrounds/                 # emberday-anime.png
 ├── docs
 │   └── showcase.md              # the rice describing itself, rendered in Postilla
@@ -194,6 +196,11 @@ dropdown will look like it did nothing.
 Text on an opaque pane ![#DDD9D1](https://placehold.co/12x12/ddd9d1/ddd9d1.png) `#DDD9D1`, one step darker than the desktop; ember for
 commands, moss for strings and success, amber for warnings, brick for errors,
 slate blue for directories, verdigris for symlinks, heather in the magenta slot.
+
+If ink is not the plain text you want, there are five other variants
+with the same ANSI colours, from Graphite ![#5B5E66](https://placehold.co/12x12/5b5e66/5b5e66.png) `#5B5E66` to
+Charcoal ![#41454E](https://placehold.co/12x12/41454e/41454e.png) `#41454E`. Previews and which to
+pick: [`cosmic-term/README.md`](cosmic-term/README.md).
 
 ---
 
@@ -447,6 +454,8 @@ the screenshot. Any other source renders in the Ember Day palette with one comma
 ```
 
 Settings → Wallpaper → Add image → a file from `backgrounds/`.
+
+![The anime portrait wallpaper on the Ember Day desktop, panel only](assets/wallpaper.png)
 
 ---
 
