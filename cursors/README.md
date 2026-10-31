@@ -6,12 +6,12 @@ rice's icon colours: one per folder colour of the
 [Cosmic-EmberDay](https://github.com/atraxsrc/cosmic-icon-themes) icon pack, **Ember**, **Moss**, **Slate**, **Ink**.
 All patched so they work in COSMIC's own apps.
 
-| Variant | Preview | Body | Contrast on `#E9E6DF` | Goes with |
+| Variant | Preview | Body | Contrast on ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF` | Goes with |
 | ------- | ------- | ---- | ------------------- | --------- |
-| **Ember** (default) | ![](../assets/cursors/Oxygen-EmberDay-Ember.png) | `#A4441A` | 4.9:1 | Ember folders |
-| **Moss** | ![](../assets/cursors/Oxygen-EmberDay-Moss.png) | `#4C6B45` | 4.8:1 | Moss folders |
-| **Slate** | ![](../assets/cursors/Oxygen-EmberDay-Slate.png) | `#2F5C8A` | 5.6:1 | Slate folders |
-| **Ink** | ![](../assets/cursors/Oxygen-EmberDay-Ink.png) | `#2B2E36` | 10.9:1 | Ink folders |
+| **Ember** (default) | ![](../assets/cursors/Oxygen-EmberDay-Ember.png) | ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A` | 4.9:1 | Ember folders |
+| **Moss** | ![](../assets/cursors/Oxygen-EmberDay-Moss.png) | ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45` | 4.8:1 | Moss folders |
+| **Slate** | ![](../assets/cursors/Oxygen-EmberDay-Slate.png) | ![#2F5C8A](https://placehold.co/12x12/2f5c8a/2f5c8a.png) `#2F5C8A` | 5.6:1 | Slate folders |
+| **Ink** | ![](../assets/cursors/Oxygen-EmberDay-Ink.png) | ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36` | 10.9:1 | Ink folders |
 
 Ink is the text colour as a cursor body: the strongest contrast of the four,
 and the one that reads as plain black at a glance.

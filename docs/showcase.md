@@ -8,21 +8,21 @@ describing itself, written in Markdown and rendered by **Postilla**.
 
 ## Palette
 
-Every text colour is checked against the window background `#E9E6DF`.
+Every text colour is checked against the window background ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF`.
 
 | Role | Hex | Contrast on background |
 |------|-----|------------------------|
-| Text | `#2B2E36` | 10.9:1 |
-| Ember, accent | `#A4441A` | 4.9:1 |
-| Moss, success | `#4C6B45` | 4.8:1 |
-| Amber, warning | `#8A5E12` | 4.6:1 |
-| Brick, error | `#9E3A3A` | 5.4:1 |
-| Heather, magenta | `#6E4E8C` | 5.4:1 |
-| Verdigris, symlinks | `#2E6E6A` | 4.7:1 |
+| Text | ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36` | 10.9:1 |
+| Ember, accent | ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A` | 4.9:1 |
+| Moss, success | ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45` | 4.8:1 |
+| Amber, warning | ![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) `#8A5E12` | 4.6:1 |
+| Brick, error | ![#9E3A3A](https://placehold.co/12x12/9e3a3a/9e3a3a.png) `#9E3A3A` | 5.4:1 |
+| Heather, magenta | ![#6E4E8C](https://placehold.co/12x12/6e4e8c/6e4e8c.png) `#6E4E8C` | 5.4:1 |
+| Verdigris, symlinks | ![#2E6E6A](https://placehold.co/12x12/2e6e6a/2e6e6a.png) `#2E6E6A` | 4.7:1 |
 
-Containers sit one step away from the background at `#E2DED6`, which is
+Containers sit one step away from the background at ![#E2DED6](https://placehold.co/12x12/e2ded6/e2ded6.png) `#E2DED6`, which is
 what frosted glass blurs into. The terminal is the exception: an opaque pane
-at `#DDD9D1`, one step darker than the desktop.
+at ![#DDD9D1](https://placehold.co/12x12/ddd9d1/ddd9d1.png) `#DDD9D1`, one step darker than the desktop.
 
 ## Where the colours go
 

@@ -33,17 +33,17 @@ macOS refuse `.crx` files from outside the store, so use Load unpacked there.
 
 Same roles as Noir's Brave theme: icons and inactive tabs take moss, the
 active tab text takes ember. The Firefox theme keeps its inactive tabs on
-`#505156` and its active tab on the text colour; Brave puts both accents on
+![#505156](https://placehold.co/12x12/505156/505156.png) `#505156` and its active tab on the text colour; Brave puts both accents on
 the tabs, as Noir does.
 
 | Hex       | Where in the theme                                 |
 |-----------|----------------------------------------------------|
-| `#E9E6DF` | Frame, inactive tabs, new tab page (incognito too) |
-| `#E2DED6` | Toolbar and active tab                             |
-| `#E9E6E0` | Address bar                                        |
-| `#2B2E36` | Bookmark bar text, address bar text, new tab text  |
-| `#4C6B45` | Toolbar icons, inactive tab text                   |
-| `#A4441A` | Active tab text, new tab links                     |
+| ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF` | Frame, inactive tabs, new tab page (incognito too) |
+| ![#E2DED6](https://placehold.co/12x12/e2ded6/e2ded6.png) `#E2DED6` | Toolbar and active tab                             |
+| ![#E9E6E0](https://placehold.co/12x12/e9e6e0/e9e6e0.png) `#E9E6E0` | Address bar                                        |
+| ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36` | Bookmark bar text, address bar text, new tab text  |
+| ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45` | Toolbar icons, inactive tab text                   |
+| ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A` | Active tab text, new tab links                     |
 
 Every text colour clears WCAG AA (4.5:1) on its background; the lowest is the
 ember active tab text at 4.58:1. The moss toolbar icons are 4.48:1, above the

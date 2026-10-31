@@ -23,34 +23,34 @@ Ember is one design in two halves: cold blue-black night, warm stone day, one
 ember accent shared by both. Big shapes (window, containers, text) are neutral; the
 ember is small and loud (accent, window hint, commands) and everything else in the
 ANSI set stays calm, pairing by lightness only. Every role you read as text clears
-4.5:1 on the window `#E9E6DF`; the terminal is an opaque pane `#DDD9D1`, one step darker
+4.5:1 on the window ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF`; the terminal is an opaque pane ![#DDD9D1](https://placehold.co/12x12/ddd9d1/ddd9d1.png) `#DDD9D1`, one step darker
 than the desktop.
 
 | Role | Color | Hex |
 |------|-------|-----|
-| Background | ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) Stone | `#E9E6DF` |
-| Containers | ![#E2DED6](https://placehold.co/12x12/e2ded6/e2ded6.png) Linen / Pane | `#E2DED6` / `#DDD9D1` |
-| Terminal | ![#DDD9D1](https://placehold.co/12x12/ddd9d1/ddd9d1.png) Pane, opaque | `#DDD9D1` |
-| Text | ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) Ink | `#2B2E36` |
-| Accent | ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) Ember | `#A4441A` |
-| Success | ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) Moss | `#4C6B45` |
-| Warning | ![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) Amber | `#8A5E12` |
-| Error | ![#9E3A3A](https://placehold.co/12x12/9e3a3a/9e3a3a.png) Brick | `#9E3A3A` |
-| Blue | ![#2F5C8A](https://placehold.co/12x12/2f5c8a/2f5c8a.png) Slate blue | `#2F5C8A` |
-| Magenta | ![#6E4E8C](https://placehold.co/12x12/6e4e8c/6e4e8c.png) Heather | `#6E4E8C` |
-| Cyan | ![#2E6E6A](https://placehold.co/12x12/2e6e6a/2e6e6a.png) Verdigris | `#2E6E6A` |
-| Muted | ![#6B6F78](https://placehold.co/12x12/6b6f78/6b6f78.png) Muted | `#6B6F78` |
-| Comment | ![#8C9099](https://placehold.co/12x12/8c9099/8c9099.png) Comment | `#8C9099` |
+| Background | ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) Stone | ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF` |
+| Containers | ![#E2DED6](https://placehold.co/12x12/e2ded6/e2ded6.png) Linen / Pane | ![#E2DED6](https://placehold.co/12x12/e2ded6/e2ded6.png) `#E2DED6` / ![#DDD9D1](https://placehold.co/12x12/ddd9d1/ddd9d1.png) `#DDD9D1` |
+| Terminal | ![#DDD9D1](https://placehold.co/12x12/ddd9d1/ddd9d1.png) Pane, opaque | ![#DDD9D1](https://placehold.co/12x12/ddd9d1/ddd9d1.png) `#DDD9D1` |
+| Text | ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) Ink | ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36` |
+| Accent | ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) Ember | ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A` |
+| Success | ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) Moss | ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45` |
+| Warning | ![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) Amber | ![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) `#8A5E12` |
+| Error | ![#9E3A3A](https://placehold.co/12x12/9e3a3a/9e3a3a.png) Brick | ![#9E3A3A](https://placehold.co/12x12/9e3a3a/9e3a3a.png) `#9E3A3A` |
+| Blue | ![#2F5C8A](https://placehold.co/12x12/2f5c8a/2f5c8a.png) Slate blue | ![#2F5C8A](https://placehold.co/12x12/2f5c8a/2f5c8a.png) `#2F5C8A` |
+| Magenta | ![#6E4E8C](https://placehold.co/12x12/6e4e8c/6e4e8c.png) Heather | ![#6E4E8C](https://placehold.co/12x12/6e4e8c/6e4e8c.png) `#6E4E8C` |
+| Cyan | ![#2E6E6A](https://placehold.co/12x12/2e6e6a/2e6e6a.png) Verdigris | ![#2E6E6A](https://placehold.co/12x12/2e6e6a/2e6e6a.png) `#2E6E6A` |
+| Muted | ![#6B6F78](https://placehold.co/12x12/6b6f78/6b6f78.png) Muted | ![#6B6F78](https://placehold.co/12x12/6b6f78/6b6f78.png) `#6B6F78` |
+| Comment | ![#8C9099](https://placehold.co/12x12/8c9099/8c9099.png) Comment | ![#8C9099](https://placehold.co/12x12/8c9099/8c9099.png) `#8C9099` |
 
-Window hint `#A4441A`. Ratios per role are in `docs/showcase.md`, or run
+Window hint ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`. Ratios per role are in `docs/showcase.md`, or run
 `python3 scripts/contrast.py`.
 
 | Role | Ember Day | Ember |
 |------|-----------|-------|
-| Background | `#E9E6DF` | `#15171C` |
-| Text | `#2B2E36` | `#D6D9E0` |
-| Accent | `#A4441A` | `#E8713A` |
-| Success | `#4C6B45` | `#8FB58A` |
+| Background | ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF` | ![#15171C](https://placehold.co/12x12/15171c/15171c.png) `#15171C` |
+| Text | ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36` | ![#D6D9E0](https://placehold.co/12x12/d6d9e0/d6d9e0.png) `#D6D9E0` |
+| Accent | ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A` | ![#E8713A](https://placehold.co/12x12/e8713a/e8713a.png) `#E8713A` |
+| Success | ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45` | ![#8FB58A](https://placehold.co/12x12/8fb58a/8fb58a.png) `#8FB58A` |
 
 ---
 
@@ -130,17 +130,17 @@ This is a **Light** theme, so it goes in COSMIC's Light slot:
 
 Settings → Desktop → Appearance → **Light** → **Import** → `cosmic/EmberDay.ron`
 
-Accent and window hint are the ember `#A4441A`, matching the other half.
+Accent and window hint are the ember ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`, matching the other half.
 Use the `+` control if you want a custom swatch.
 
 Frosted glass is on in the `.ron` at `frosted: Low` with an opacity table of
-0.66 to 0.96, tinted with the palette's middle neutral `#868686`, for windows, panel,
+0.66 to 0.96, tinted with the palette's middle neutral ![#868686](https://placehold.co/12x12/868686/868686.png) `#868686`, for windows, panel,
 applets and system UI (maximized apps stay solid), and corners are squared
 (`radius_*: 2.0`), the same as the DarkGold baseline. Adjust frosted glass on
 Appearance → Style → Frosted glass after import; those sliders survive a theme switch.
 
 **Known COSMIC bug:** moving the frosted glass opacity / thickness sliders can
-reset `text_tint` to `#FFFFFF`, which on a light theme makes every label
+reset `text_tint` to ![#FFFFFF](https://placehold.co/12x12/ffffff/ffffff.png) `#FFFFFF`, which on a light theme makes every label
 unreadable. If your text turns white, re-import `cosmic/EmberDay.ron`: it
 carries the ink tint and the whole frosted block, so one import restores both.
 Upstream fix proposed in [libcosmic#1450](https://github.com/pop-os/libcosmic/pull/1450),
@@ -188,7 +188,7 @@ The desktop `.ron` does not colour ANSI text.
 If a profile is set as default, set the scheme on that profile too or the
 dropdown will look like it did nothing.
 
-Text on an opaque pane `#DDD9D1`, one step darker than the desktop; ember for
+Text on an opaque pane ![#DDD9D1](https://placehold.co/12x12/ddd9d1/ddd9d1.png) `#DDD9D1`, one step darker than the desktop; ember for
 commands, moss for strings and success, amber for warnings, brick for errors,
 slate blue for directories, verdigris for symlinks, heather in the magenta slot.
 
@@ -421,7 +421,7 @@ cp btop/EmberDay.theme ~/.config/btop/themes/
 Icons: **Cosmic-EmberDay**, the [Kanagawa icons](https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme/tree/main/icons/Kanagawa)
 by Fausto Korpsvart recolored to this palette in
 [cosmic-icon-themes](https://github.com/atraxsrc/cosmic-icon-themes). Folders come in
-four colors: **Ember** `#A4441A` (default), **Moss** `#4C6B45`, **Slate** `#2F5C8A` and **Ink** `#2B2E36` with ember symbols.
+four colors: **Ember** ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A` (default), **Moss** ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45`, **Slate** ![#2F5C8A](https://placehold.co/12x12/2f5c8a/2f5c8a.png) `#2F5C8A` and **Ink** ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36` with ember symbols.
 
 ![Cosmic-EmberDay folder colors](https://raw.githubusercontent.com/atraxsrc/cosmic-icon-themes/main/previews/Cosmic-EmberDay.png)
 
