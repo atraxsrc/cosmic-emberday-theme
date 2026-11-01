@@ -60,6 +60,13 @@ Window hint ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`. 
 
 ```
 .
+├── alacritty
+│   ├── emberday.toml            # Alacritty colour scheme
+│   └── install.sh
+├── bat
+│   ├── EmberDay.tmTheme         # bat syntax theme (delta uses it too)
+│   ├── config                   # --theme="EmberDay"
+│   └── install.sh
 ├── brave
 │   ├── theme                    # Chromium theme (manifest + icons), Load unpacked
 │   └── README.md
@@ -79,6 +86,21 @@ Window hint ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`. 
 │   ├── install.sh
 │   ├── uninstall.sh
 │   └── README.md
+├── delta
+│   ├── emberday.gitconfig       # delta (git pager) colours, [include] it from ~/.gitconfig
+│   └── install.sh
+├── discord
+│   ├── cosmic-ember.theme.css   # Vencord / Vesktop theme, Ember (dark) + Ember Day (light)
+│   └── install.sh
+├── ghostty
+│   ├── EmberDay                 # Ghostty theme
+│   └── install.sh
+├── gtk
+│   ├── emberday.css             # GTK 3 / 4 named colours for non-COSMIC apps
+│   └── install.sh
+├── helix
+│   ├── emberday.toml            # Helix theme
+│   └── install.sh
 ├── icons
 │   └── install.sh               # Cosmic-EmberDay icon pack from cosmic-icon-themes
 ├── fastfetch
@@ -92,11 +114,26 @@ Window hint ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`. 
 │   │   └── userContent.css      # new tab accents, blank tiles
 │   ├── install.sh
 │   └── README.md
+├── kitty
+│   ├── EmberDay.conf            # kitty colour scheme
+│   └── install.sh
+├── lazygit
+│   ├── emberday.yml             # lazygit colours only, stacked on your config.yml
+│   └── install.sh
 ├── lsd
 │   ├── config.yaml              # theme: custom
 │   ├── colors.yaml              # permission / size / date / git columns
 │   └── install.sh
 ├── nvim                         # Neovim colorscheme, LazyVim spec, RON syntax, install.sh
+├── obsidian
+│   ├── cosmic-ember.css         # CSS snippet, Ember (dark) + Ember Day (light)
+│   └── install.sh
+├── qt
+│   ├── EmberDay.conf            # qt5ct / qt6ct colour scheme
+│   └── install.sh
+├── starship
+│   ├── starship.toml            # prompt, palette colours, clock on the right
+│   └── install.sh
 ├── telegram
 │   ├── colors.tdesktop-theme    # Telegram Desktop colour scheme (source)
 │   ├── cosmic-emberday.tdesktop-theme  # built theme, open this in Telegram
@@ -111,8 +148,11 @@ Window hint ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`. 
 │   ├── switch.sh                # make this the active rice (see Switching rice)
 │   ├── contrast.py              # palette contrast table, feeds the README
 │   └── wallpaper.sh             # renders a wallpaper from any source image
+├── wezterm
+│   ├── emberday.lua             # WezTerm colours, config.colors = require("emberday")
+│   └── install.sh
 ├── zsh
-│   ├── emberday.zsh             # LS_COLORS, highlighting colours, aliases, starship
+│   ├── emberday.zsh             # LS_COLORS, highlighting colours, aliases, starship, lazygit
 │   └── install.sh
 ├── assets
 │   ├── cursors/                 # cursor preview
@@ -311,6 +351,90 @@ theme.
 
 ---
 
+## GTK and Qt apps
+
+COSMIC colours GTK apps itself when Appearance → **Apply theme to GNOME apps**
+is on (the baseline config turns it on). `gtk/emberday.css` is the same palette
+pinned by hand for GTK 3 and GTK 4 / libadwaita apps: windows and lists on
+![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF`, cards, popovers and dialogs on ![#E2DED6](https://placehold.co/12x12/e2ded6/e2ded6.png) `#E2DED6`, text in ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36`, selection
+and accent in ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A` with ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF` text on it, ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45` for
+success and ![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) `#8A5E12` for warnings. It only sets the named colours, so
+widgets keep their stock shapes, and it also works where COSMIC's toggle does
+not reach (another desktop, Flatpak apps given access to `~/.config/gtk-4.0`).
+
+```bash
+./gtk/install.sh
+```
+
+It copies the file to `~/.config/gtk-3.0/` and `~/.config/gtk-4.0/` and adds
+`@import url("emberday.css");` to `gtk.css` there, after COSMIC's own import so
+these colours win (backup in `gtk.css.bak`); another rice's import is
+commented out. Restart GTK apps.
+
+`qt/EmberDay.conf` is a colour scheme for [qt5ct](https://github.com/desktop-app/qt5ct)
+/ [qt6ct](https://github.com/trialuser02/qt6ct): windows on ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF`, text
+fields and lists on ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF`, buttons and tooltips on ![#E2DED6](https://placehold.co/12x12/e2ded6/e2ded6.png) `#E2DED6`, text in
+![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36`, ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A` for the highlight and links, placeholders in ![#6B6F78](https://placehold.co/12x12/6b6f78/6b6f78.png) `#6B6F78`,
+disabled text in ![#8C9099](https://placehold.co/12x12/8c9099/8c9099.png) `#8C9099`.
+
+```bash
+./qt/install.sh
+# qt6ct → Appearance → Color scheme → EmberDay, Palette: Custom → Apply
+```
+
+Qt apps read it with `QT_QPA_PLATFORMTHEME=qt6ct` (or `qt5ct`) in the
+environment; `~/.config/environment.d/` or your `~/.zshrc` is the place.
+
+Text and secondary text read at 4.5:1 or better on the window, container and
+field colours; disabled, placeholder and dim text, like comments elsewhere in
+the rice, at 2.4:1.
+
+---
+
+## Obsidian
+
+`obsidian/cosmic-ember.css` is a CSS snippet with both halves of the pair:
+Ember in dark mode, Ember Day in light mode, so with Settings →
+Appearance → Base color scheme → **Adapt to system** Obsidian follows COSMIC's
+Dark / Light toggle. Editor on ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF`, sidebars on ![#E2DED6](https://placehold.co/12x12/e2ded6/e2ded6.png) `#E2DED6`, text in ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36`,
+links and accent in ![#9F4219](https://placehold.co/12x12/9f4219/9f4219.png) `#9F4219`, headings coloured like Neovim's
+(![#9F4219](https://placehold.co/12x12/9f4219/9f4219.png) `#9F4219` / ![#2F5C8A](https://placehold.co/12x12/2f5c8a/2f5c8a.png) `#2F5C8A` / ![#2E6E6A](https://placehold.co/12x12/2e6e6a/2e6e6a.png) `#2E6E6A`), code and checkboxes in ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45`, tags
+in ![#2F5C8A](https://placehold.co/12x12/2f5c8a/2f5c8a.png) `#2F5C8A`. The same file ships in cosmic-ember-theme.
+
+```bash
+./obsidian/install.sh ~/path/to/vault
+# Settings → Appearance → CSS snippets → cosmic-ember
+```
+
+It copies the file into the vault's `.obsidian/snippets/`. Snippets are per
+vault, so run it once per vault.
+
+---
+
+## Discord
+
+`discord/cosmic-ember.theme.css` is a theme for [Vencord](https://vencord.dev/)
+and [Vesktop](https://github.com/Vencord/Vesktop), colours only: chat on
+![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF`, sidebars and inputs on ![#E2DED6](https://placehold.co/12x12/e2ded6/e2ded6.png) `#E2DED6`, server list on ![#CBC8C0](https://placehold.co/12x12/cbc8c0/cbc8c0.png) `#CBC8C0`, text in
+![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36`, channel names in ![#5C5F67](https://placehold.co/12x12/5c5f67/5c5f67.png) `#5C5F67`, accent, mentions and links in
+![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`, ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45` for online and positive, ![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) `#8A5E12` for
+warnings. The light half is Ember Day and the dark half Ember, so
+with Appearance → Theme → **Sync with computer** it follows COSMIC's toggle.
+The same file ships in cosmic-ember-theme.
+
+```bash
+./discord/install.sh
+# Settings → Vencord → Themes → Cosmic Ember
+```
+
+It copies the file into `~/.config/Vencord/themes/` and
+`~/.config/vesktop/themes/`, whichever exist. Discord renames its CSS
+variables now and then; the file sets both the long-standing names and the
+2025 `--bg-*` set. Text on the surfaces is 4.5:1 or better; the text on
+Discord's own accent-coloured buttons stays its white, at 6.1:1.
+
+---
+
 ## Cursor
 
 **Oxygen** cursors recoloured to the icon colours, one per folder colour of the
@@ -356,12 +480,125 @@ Makes this the active rice, coming from any other `cosmic-*-theme` rice. See
 Need a [Nerd Font](https://www.nerdfonts.com/) in the terminal for the icons
 (Maple Mono NFM in the baseline above).
 
+### kitty, Alacritty, WezTerm, Ghostty
+
+The COSMIC Terminal scheme for other terminals, one file each with the same
+sixteen ANSI colours, text in ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36`, the cursor in ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A` and the
+selection on ![#BBB9B2](https://placehold.co/12x12/bbb9b2/bbb9b2.png) `#BBB9B2`. Each installer copies the file next to that terminal's
+config and backs up what it replaces; the one include line you add is
+printed, and is in the comment at the top of each file:
+
+```bash
+./kitty/install.sh        # ~/.config/kitty/themes/EmberDay.conf       kitty.conf:     include themes/EmberDay.conf
+./alacritty/install.sh    # ~/.config/alacritty/themes/emberday.toml   alacritty.toml: [general] import = ["~/.config/alacritty/themes/emberday.toml"]
+./wezterm/install.sh      # ~/.config/wezterm/emberday.lua             wezterm.lua:    config.colors = require("emberday")
+./ghostty/install.sh      # ~/.config/ghostty/themes/EmberDay          config:         theme = EmberDay
+```
+
+Ghostty and WezTerm can follow COSMIC's Dark / Light toggle once the Ember
+half is installed from its repo as well: `theme = dark:Ember,light:EmberDay` in
+Ghostty, and in WezTerm
+
+```lua
+local dark = (wezterm.gui and wezterm.gui.get_appearance() or "Dark"):find("Dark")
+config.colors = require(dark and "ember" or "emberday")
+```
+
+kitty and Alacritty have no such switch; include the other file instead.
+
+### starship
+
+`starship/starship.toml` is close to the defaults with the palette declared
+once as `[palettes.emberday]` and used by name: the directory in ![#5C5F67](https://placehold.co/12x12/5c5f67/5c5f67.png) `#5C5F67`,
+the branch in ![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) `#8A5E12`, ![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) `#8A5E12` for a dirty tree, a ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45` prompt
+character that turns ![#9E3A3A](https://placehold.co/12x12/9e3a3a/9e3a3a.png) `#9E3A3A` after a failed command, a dim `HH:MM` clock on
+the right. Modules it does not style keep their defaults, which use the ANSI
+slots the COSMIC Terminal scheme colours. `zsh/emberday.zsh` already runs
+`starship init`. `install.sh` backs up any existing `~/.config/starship.toml`
+to `starship.toml.bak`.
+
+```bash
+./starship/install.sh
+```
+
+### bat
+
+`bat/EmberDay.tmTheme` is a syntax theme coloured the way Neovim is in this
+rice: keywords in ![#6E4E8C](https://placehold.co/12x12/6e4e8c/6e4e8c.png) `#6E4E8C`, strings in ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45`, functions in ![#2F5C8A](https://placehold.co/12x12/2f5c8a/2f5c8a.png) `#2F5C8A`, numbers
+in ![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) `#8A5E12`, types in ![#2E6E6A](https://placehold.co/12x12/2e6e6a/2e6e6a.png) `#2E6E6A`, imports and escapes in ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`, italic
+comments in ![#8C9099](https://placehold.co/12x12/8c9099/8c9099.png) `#8C9099`, on the editor background ![#DDD9D1](https://placehold.co/12x12/ddd9d1/ddd9d1.png) `#DDD9D1`. `zsh/emberday.zsh`
+aliases `cat` to bat. `install.sh` copies the theme to `~/.config/bat/themes/`,
+rebuilds bat's cache so bat and delta can find it, and sets `--theme="EmberDay"`
+in `~/.config/bat/config` (backup in `config.bak`).
+
+```bash
+./bat/install.sh
+batcat README.md
+```
+
+### delta
+
+`delta/emberday.gitconfig` colours [delta](https://github.com/dandavison/delta),
+the git diff pager: removed lines in ![#9E3A3A](https://placehold.co/12x12/9e3a3a/9e3a3a.png) `#9E3A3A` and added lines in
+![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45` on the container ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF`, changed words on a solid block of
+those two colours with ![#DDD9D1](https://placehold.co/12x12/ddd9d1/ddd9d1.png) `#DDD9D1` text, the same as Neovim's diff highlights;
+file names in ![#9F4219](https://placehold.co/12x12/9f4219/9f4219.png) `#9F4219`, commit hashes in ![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) `#8A5E12`, hunk headers in
+![#5C5F67](https://placehold.co/12x12/5c5f67/5c5f67.png) `#5C5F67` inside ![#BBB9B2](https://placehold.co/12x12/bbb9b2/bbb9b2.png) `#BBB9B2` boxes, line numbers. Code inside the diff
+uses the bat theme above, so install that first. `install.sh` copies the file
+to `~/.config/delta/` and prints the `[include]` to add to `~/.gitconfig`; it
+never edits that file.
+
+```bash
+./delta/install.sh
+```
+
+```ini
+# ~/.gitconfig
+[include]
+    path = ~/.config/delta/emberday.gitconfig
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+```
+
+### lazygit
+
+`lazygit/emberday.yml` holds only the `gui.theme` block: active border in
+![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`, inactive borders in ![#BBB9B2](https://placehold.co/12x12/bbb9b2/bbb9b2.png) `#BBB9B2`, the selected line on ![#CBC8C0](https://placehold.co/12x12/cbc8c0/cbc8c0.png) `#CBC8C0`,
+![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) `#8A5E12` and ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45` marks for cherry-picked and base commits,
+unstaged changes in ![#9E3A3A](https://placehold.co/12x12/9e3a3a/9e3a3a.png) `#9E3A3A`, author names in ![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) `#8A5E12`. lazygit reads one
+config file, so instead of replacing your `~/.config/lazygit/config.yml` the
+installer drops the theme beside it and `zsh/emberday.zsh` sets `LG_CONFIG_FILE`
+to both, your file first, so the colours win and your keybindings stay.
+
+```bash
+./lazygit/install.sh
+exec zsh
+```
+
+Without the zsh layer, export it yourself:
+`LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/emberday.yml"`.
+
+### Helix
+
+`helix/emberday.toml` is the Neovim colorscheme for [Helix](https://helix-editor.com/):
+same syntax roles, editor on ![#DDD9D1](https://placehold.co/12x12/ddd9d1/ddd9d1.png) `#DDD9D1`, status line and popups on ![#E9E6DF](https://placehold.co/12x12/e9e6df/e9e6df.png) `#E9E6DF`,
+cursor and current line number in ![#9F4219](https://placehold.co/12x12/9f4219/9f4219.png) `#9F4219`, the mode shown as a solid
+![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A` / ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45` / ![#8A5E12](https://placehold.co/12x12/8a5e12/8a5e12.png) `#8A5E12` block. `install.sh` copies it to
+`~/.config/helix/themes/`.
+
+```bash
+./helix/install.sh
+# ~/.config/helix/config.toml:  theme = "emberday"
+```
+
 ### zsh
 
 `zsh/emberday.zsh` is the rice part of the shell only: `LS_COLORS` (also used
 by lsd for file names and by the completion menu), ember / moss / brick colours
-for zsh-autosuggestions and zsh-syntax-highlighting, lsd / bat / nvim aliases
-and the starship prompt. Your own `~/.zshrc` stays private and sources it.
+for zsh-autosuggestions and zsh-syntax-highlighting, lsd / bat / nvim aliases,
+the lazygit theme file and the starship prompt. Your own `~/.zshrc` stays private and sources it.
 
 Needs zsh + [oh-my-zsh](https://ohmyz.sh/). `install.sh` clones the two
 plugins if missing and appends one `source` line to `~/.zshrc` (backup in
@@ -500,6 +737,26 @@ reboot
 ./nvim/install.sh
 mkdir -p ~/.config/btop/themes && cp btop/EmberDay.theme ~/.config/btop/themes/
 
+./starship/install.sh
+./bat/install.sh
+./delta/install.sh          # then the [include] it prints, in ~/.gitconfig
+./lazygit/install.sh
+./helix/install.sh          # then theme = "emberday" in helix/config.toml
+
+# other terminals, one include line each (see Terminal extras above)
+./kitty/install.sh
+./alacritty/install.sh
+./wezterm/install.sh
+./ghostty/install.sh
+
+# gtk + qt apps (see GTK and Qt apps above)
+./gtk/install.sh
+./qt/install.sh             # then qt6ct → Color scheme → EmberDay
+
+# obsidian + discord, both halves in one file (see above)
+./obsidian/install.sh ~/path/to/vault
+./discord/install.sh
+
 # wallpaper
 # Settings → Wallpaper → Add image → a file from backgrounds/ (see Icons and wallpaper above)
 
@@ -530,8 +787,11 @@ It backs up every file it replaces, then:
   The terminal scheme and icon theme are only replaced when the current one is
   not already a Ember Day variant, so a dimmer text variant or another icon colour
   survives. Icons stay as they are until `./icons/install.sh` has run.
-- runs the fastfetch, lsd, Neovim and Claude Desktop installers and sets
-  btop's `color_theme`
+- runs the fastfetch, lsd, bat, starship, delta, lazygit, kitty, Alacritty,
+  WezTerm, Ghostty, Helix, GTK, Qt, Discord, Neovim and Claude Desktop
+  installers and sets btop's `color_theme`. The terminal, editor and Qt
+  installers only copy theme files; the include line you added once stays,
+  switch it by hand when the file name differs between rices
 - moves every other rice's LazyVim spec from `~/.config/nvim/lua/plugins/` to
   `~/.config/nvim/rice-off/` (LazyVim loads every spec there and the last
   colorscheme wins); your own specs stay
@@ -548,6 +808,7 @@ The GUI steps it cannot do are printed at the end:
 4. Settings → Wallpaper → a file from `backgrounds/`
 5. Claude Desktop: Ctrl+Shift+T → `cosmic-ember`, Appearance → Light
 6. `exec zsh`, restart Neovim (`:Lazy clean` drops plugins only the old specs used)
+7. Obsidian: `./obsidian/install.sh <vault>`; delta: the `[include]` path in `~/.gitconfig`
 
 Skip 1 and 2 when that slot already holds Ember Day. The first time on this rice,
 run [Setup](#setup) once for the fonts, icons and cursor.
@@ -572,6 +833,14 @@ puts the Pop cursor back.
 | [lsd](https://github.com/lsd-rs/lsd) | `ls` with icons and colours |
 | [fastfetch](https://github.com/fastfetch-cli/fastfetch) | System info |
 | [btop](https://github.com/aristocratos/btop) | Resource monitor |
+| [starship](https://starship.rs/) | Prompt |
+| [bat](https://github.com/sharkdp/bat) | `cat` with syntax highlighting |
+| [delta](https://github.com/dandavison/delta) | git diff pager |
+| [lazygit](https://github.com/jesseduffield/lazygit) | git TUI |
+| [Helix](https://helix-editor.com/) | Editor |
+| [kitty](https://sw.kovidgoyal.net/kitty/), [Alacritty](https://alacritty.org/), [WezTerm](https://wezterm.org/), [Ghostty](https://ghostty.org/) | Other terminals |
+| [qt6ct](https://github.com/trialuser02/qt6ct) | Qt colour scheme |
+| [Vencord](https://vencord.dev/) / [Vesktop](https://github.com/Vencord/Vesktop) | Discord theme host |
 | [cosmic-icon-themes](https://github.com/atraxsrc/cosmic-icon-themes) | Icon pack (Cosmic-EmberDay), recolored from [Kanagawa icons](https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme/tree/main/icons/Kanagawa) |
 | [Oxygen-Cursors](https://github.com/wo2ni/Oxygen-Cursors) | Cursor, recoloured to the icon colours |
 

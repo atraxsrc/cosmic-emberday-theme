@@ -1,0 +1,80 @@
+# EmberDay for Alacritty, part of cosmic-emberday-theme (MIT).
+# Colours follow the COSMIC Terminal scheme (cosmic-term/).
+#
+# Install: ./alacritty/install.sh puts this in ~/.config/alacritty/themes/,
+# then in ~/.config/alacritty/alacritty.toml:
+#   [general]
+#   import = ["~/.config/alacritty/themes/emberday.toml"]
+# (Alacritty 0.13: a top-level `import = [...]` line instead.)
+
+[colors.primary]
+background = "#DDD9D1"
+foreground = "#2B2E36"
+bright_foreground = "#25272E"
+dim_foreground = "#6B6F78"
+
+[colors.cursor]
+text = "#DDD9D1"
+cursor = "#A4441A"
+
+[colors.vi_mode_cursor]
+text = "#DDD9D1"
+cursor = "#8A5E12"
+
+[colors.selection]
+text = "CellForeground"
+background = "#BBB9B2"
+
+[colors.search.matches]
+foreground = "#DDD9D1"
+background = "#8A5E12"
+
+[colors.search.focused_match]
+foreground = "#E9E6DF"
+background = "#A4441A"
+
+[colors.hints.start]
+foreground = "#DDD9D1"
+background = "#8A5E12"
+
+[colors.hints.end]
+foreground = "#DDD9D1"
+background = "#8A5E12"
+
+[colors.footer_bar]
+foreground = "#2B2E36"
+background = "#E2DED6"
+
+[colors.line_indicator]
+foreground = "None"
+background = "None"
+
+[colors.normal]
+black   = "#2B2E36"
+red     = "#9E3A3A"
+green   = "#4C6B45"
+yellow  = "#8A5E12"
+blue    = "#2F5C8A"
+magenta = "#6E4E8C"
+cyan    = "#2E6E6A"
+white   = "#6B6F78"
+
+[colors.bright]
+black   = "#25272E"
+red     = "#863131"
+green   = "#415B3B"
+yellow  = "#75500F"
+blue    = "#284E75"
+magenta = "#5E4277"
+cyan    = "#275E5A"
+white   = "#5B5E66"
+
+[colors.dim]
+black   = "#727274"
+red     = "#B77A76"
+green   = "#86977D"
+yellow  = "#AB8F5E"
+blue    = "#758EA6"
+magenta = "#9A86A8"
+cyan    = "#749993"
+white   = "#99999C"

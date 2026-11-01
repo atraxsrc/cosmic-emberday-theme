@@ -1,0 +1,45 @@
+# EmberDay for Ghostty, part of cosmic-emberday-theme (MIT).
+# Colours follow the COSMIC Terminal scheme (cosmic-term/).
+#
+# Install: ./ghostty/install.sh puts this in ~/.config/ghostty/themes/, then in
+# ~/.config/ghostty/config:
+#   theme = EmberDay
+# or, with the Ember half installed too, following COSMIC's Dark / Light toggle:
+#   theme = dark:Ember,light:EmberDay
+
+background = #DDD9D1
+foreground = #2B2E36
+
+cursor-color = #A4441A
+cursor-text = #DDD9D1
+
+selection-background = #BBB9B2
+selection-foreground = #2B2E36
+
+split-divider-color = #BBB9B2
+unfocused-split-fill = #DDD9D1
+
+# black
+palette = 0=#2B2E36
+palette = 8=#25272E
+# red
+palette = 1=#9E3A3A
+palette = 9=#863131
+# green
+palette = 2=#4C6B45
+palette = 10=#415B3B
+# yellow
+palette = 3=#8A5E12
+palette = 11=#75500F
+# blue
+palette = 4=#2F5C8A
+palette = 12=#284E75
+# magenta
+palette = 5=#6E4E8C
+palette = 13=#5E4277
+# cyan
+palette = 6=#2E6E6A
+palette = 14=#275E5A
+# white
+palette = 7=#6B6F78
+palette = 15=#5B5E66

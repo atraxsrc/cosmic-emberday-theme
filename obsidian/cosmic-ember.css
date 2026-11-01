@@ -1,0 +1,209 @@
+/* cosmic-ember - Obsidian CSS snippet for the COSMIC rice pair (MIT).
+ * Ember in dark mode, Ember Day in light mode: with Settings -> Appearance ->
+ * Base color scheme set to "Adapt to system", Obsidian follows COSMIC's
+ * Dark / Light toggle between the two. The same file ships in both repos.
+ *
+ * Install: ./obsidian/install.sh <vault> copies it to
+ * <vault>/.obsidian/snippets/, then Settings -> Appearance -> CSS snippets
+ * -> cosmic-ember. Colours come from the rices' cosmic/*.ron palettes and
+ * nvim colorschemes; edit the palette, not this file. */
+
+.theme-dark {
+  /* Ember */
+  --background-primary: #15171C;
+  --background-primary-alt: #22262E;
+  --background-secondary: #22262E;
+  --background-secondary-alt: #1B1E24;
+  --background-modifier-border: #3E4147;
+  --background-modifier-border-hover: #7C8290;
+  --background-modifier-border-focus: #E8713A;
+  --background-modifier-hover: #1B1E24;
+  --background-modifier-active-hover: #3E4147;
+  --background-modifier-form-field: #22262E;
+  --background-modifier-error: #D85A5A;
+  --background-modifier-error-hover: #D85A5A;
+  --background-modifier-success: #8FB58A;
+  --background-modifier-message: #22262E;
+  --titlebar-background: #15171C;
+  --titlebar-background-focused: #15171C;
+  --divider-color: #3E4147;
+  --divider-color-hover: #7C8290;
+
+  --text-normal: #D6D9E0;
+  --text-muted: #808693;
+  --text-faint: #7C8290;
+  --text-accent: #E8713A;
+  --text-accent-hover: #D9A441;
+  --text-on-accent: #15171C;
+  --text-on-accent-inverted: #D6D9E0;
+  --text-selection: #3E4147;
+  --text-highlight-bg: #D9A44150;
+  --text-error: #D85A5A;
+  --text-warning: #D9A441;
+  --text-success: #8FB58A;
+
+  --interactive-normal: #22262E;
+  --interactive-hover: #1B1E24;
+  --interactive-accent: #E8713A;
+  --interactive-accent-hover: #D9A441;
+  --interactive-success: #8FB58A;
+
+  --h1-color: #E8713A;
+  --h2-color: #7FA3C7;
+  --h3-color: #7FB7B3;
+  --h4-color: #D6D9E0;
+  --h5-color: #D6D9E0;
+  --h6-color: #7C8290;
+  --link-color: #E8713A;
+  --link-color-hover: #D9A441;
+  --link-external-color: #E8713A;
+  --link-external-color-hover: #D9A441;
+  --link-unresolved-color: #7C8290;
+  --code-normal: #8FB58A;
+  --code-background: #22262E;
+  --code-comment: #5A6070;
+  --code-function: #7FA3C7;
+  --code-important: #E8713A;
+  --code-keyword: #B08BC4;
+  --code-operator: #7C8290;
+  --code-property: #D6D9E0;
+  --code-punctuation: #7C8290;
+  --code-string: #8FB58A;
+  --code-tag: #B08BC4;
+  --code-value: #D9A441;
+  --blockquote-color: #7C8290;
+  --blockquote-border-color: #7C8290;
+  --hr-color: #7C8290;
+  --tag-color: #7FA3C7;
+  --tag-color-hover: #DEAF58;
+  --tag-background: #22262E;
+  --tag-background-hover: #1B1E24;
+  --checkbox-color: #8FB58A;
+  --checkbox-color-hover: #9CBE98;
+  --checkbox-marker-color: #15171C;
+  --list-marker-color: #7C8290;
+  --bold-color: #D6D9E0;
+  --italic-color: #D6D9E0;
+  --table-header-background: #22262E;
+  --table-row-alt-background: #22262E;
+  --table-border-color: #3E4147;
+  --scrollbar-bg: #15171C;
+  --scrollbar-thumb-bg: #7C8290;
+  --scrollbar-active-thumb-bg: #7C8290;
+  --graph-node: #D6D9E0;
+  --graph-node-focused: #E8713A;
+  --graph-node-tag: #7FA3C7;
+  --graph-node-attachment: #8FB58A;
+  --graph-node-unresolved: #5A6070;
+  --graph-line: #7C8290;
+
+  /* accent swatches: the terminal's slots */
+  --color-red: #D85A5A;
+  --color-orange: #D9A441;
+  --color-yellow: #D9A441;
+  --color-green: #8FB58A;
+  --color-cyan: #7FB7B3;
+  --color-blue: #7FA3C7;
+  --color-purple: #B08BC4;
+  --color-pink: #B999CB;
+}
+
+.theme-light {
+  /* Ember Day */
+  --background-primary: #E9E6DF;
+  --background-primary-alt: #E2DED6;
+  --background-secondary: #E2DED6;
+  --background-secondary-alt: #DDD9D1;
+  --background-modifier-border: #BBB9B2;
+  --background-modifier-border-hover: #BBB9B2;
+  --background-modifier-border-focus: #A4441A;
+  --background-modifier-hover: #DDD9D1;
+  --background-modifier-active-hover: #BBB9B2;
+  --background-modifier-form-field: #E2DED6;
+  --background-modifier-error: #9E3A3A;
+  --background-modifier-error-hover: #9E3A3A;
+  --background-modifier-success: #4C6B45;
+  --background-modifier-message: #E2DED6;
+  --titlebar-background: #E9E6DF;
+  --titlebar-background-focused: #E9E6DF;
+  --divider-color: #BBB9B2;
+  --divider-color-hover: #BBB9B2;
+
+  --text-normal: #2B2E36;
+  --text-muted: #5C5F67;
+  --text-faint: #6B6F78;
+  --text-accent: #9F4219;
+  --text-accent-hover: #9F4219;
+  --text-on-accent: #E9E6DF;
+  --text-on-accent-inverted: #2B2E36;
+  --text-selection: #BBB9B2;
+  --text-highlight-bg: #8A5E1250;
+  --text-error: #9E3A3A;
+  --text-warning: #8A5E12;
+  --text-success: #4C6B45;
+
+  --interactive-normal: #E2DED6;
+  --interactive-hover: #DDD9D1;
+  --interactive-accent: #A4441A;
+  --interactive-accent-hover: #9F4219;
+  --interactive-success: #4C6B45;
+
+  --h1-color: #9F4219;
+  --h2-color: #2F5C8A;
+  --h3-color: #2E6E6A;
+  --h4-color: #2B2E36;
+  --h5-color: #2B2E36;
+  --h6-color: #6B6F78;
+  --link-color: #9F4219;
+  --link-color-hover: #9F4219;
+  --link-external-color: #9F4219;
+  --link-external-color-hover: #9F4219;
+  --link-unresolved-color: #6B6F78;
+  --code-normal: #4C6B45;
+  --code-background: #E2DED6;
+  --code-comment: #8C9099;
+  --code-function: #2F5C8A;
+  --code-important: #A4441A;
+  --code-keyword: #6E4E8C;
+  --code-operator: #6B6F78;
+  --code-property: #2B2E36;
+  --code-punctuation: #6B6F78;
+  --code-string: #4C6B45;
+  --code-tag: #6E4E8C;
+  --code-value: #8A5E12;
+  --blockquote-color: #6B6F78;
+  --blockquote-border-color: #BBB9B2;
+  --hr-color: #BBB9B2;
+  --tag-color: #2F5C8A;
+  --tag-color-hover: #8A5E12;
+  --tag-background: #E2DED6;
+  --tag-background-hover: #DDD9D1;
+  --checkbox-color: #4C6B45;
+  --checkbox-color-hover: #4C6B45;
+  --checkbox-marker-color: #E9E6DF;
+  --list-marker-color: #6B6F78;
+  --bold-color: #2B2E36;
+  --italic-color: #2B2E36;
+  --table-header-background: #E2DED6;
+  --table-row-alt-background: #E2DED6;
+  --table-border-color: #BBB9B2;
+  --scrollbar-bg: #E9E6DF;
+  --scrollbar-thumb-bg: #BBB9B2;
+  --scrollbar-active-thumb-bg: #6B6F78;
+  --graph-node: #2B2E36;
+  --graph-node-focused: #A4441A;
+  --graph-node-tag: #2F5C8A;
+  --graph-node-attachment: #4C6B45;
+  --graph-node-unresolved: #8C9099;
+  --graph-line: #BBB9B2;
+
+  /* accent swatches: the terminal's slots */
+  --color-red: #9E3A3A;
+  --color-orange: #8A5E12;
+  --color-yellow: #8A5E12;
+  --color-green: #4C6B45;
+  --color-cyan: #2E6E6A;
+  --color-blue: #2F5C8A;
+  --color-purple: #6E4E8C;
+  --color-pink: #5E4277;
+}
