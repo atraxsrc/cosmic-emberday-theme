@@ -12,6 +12,7 @@ the dark half is [cosmic-ember-theme](https://github.com/atraxsrc/cosmic-ember-t
 ![COSMIC](https://img.shields.io/badge/COSMIC-1.0.0-4c6b45?style=for-the-badge)
 ![Ember Day](https://img.shields.io/badge/Theme-Ember_Day-e9e6df?style=for-the-badge&labelColor=a4441a)
 ![Firefox](https://img.shields.io/badge/Firefox-Cosmic_Ember_Day-a4441a?style=for-the-badge&logo=firefox-browser&logoColor=white)
+[![Gallery](https://img.shields.io/badge/Gallery-All_rices-a4441a?style=for-the-badge)](https://atraxsrc.github.io/cosmic-rices/)
 ![License](https://img.shields.io/badge/License-MIT-6b6f78?style=for-the-badge)
 
 </div>
