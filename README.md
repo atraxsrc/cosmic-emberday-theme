@@ -125,6 +125,8 @@ Window hint ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`. 
 │   ├── config.yaml              # theme: custom
 │   ├── colors.yaml              # permission / size / date / git columns
 │   └── install.sh
+├── notesnook
+│   └── cosmic-emberday.json     # Notesnook theme, Ember Day (light)
 ├── nvim                         # Neovim colorscheme, LazyVim spec, RON syntax, install.sh
 ├── obsidian
 │   ├── cosmic-ember.css         # CSS snippet, Ember (dark) + Ember Day (light)
@@ -409,6 +411,22 @@ in ![#2F5C8A](https://placehold.co/12x12/2f5c8a/2f5c8a.png) `#2F5C8A`. The same 
 
 It copies the file into the vault's `.obsidian/snippets/`. Snippets are per
 vault, so run it once per vault.
+
+---
+
+## Notesnook
+
+`notesnook/cosmic-emberday.json` is a [Notesnook](https://notesnook.com/) theme for Ember Day,
+built from the same palette as the Obsidian snippet: window, list and sidebar
+backgrounds, text, accent, selection and the error / success colours. A
+Notesnook theme holds one colour scheme, so the Ember half ships as
+`notesnook/cosmic-ember.json` in cosmic-ember-theme; load both if you switch between
+dark and light.
+
+```text
+Notesnook → Settings → Appearance → Themes → Load from file
+→ pick notesnook/cosmic-emberday.json → Set as default
+```
 
 ---
 
