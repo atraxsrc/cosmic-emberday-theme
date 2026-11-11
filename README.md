@@ -178,6 +178,17 @@ This is a **Light** theme, so it goes in COSMIC's Light slot:
 
 Settings → Desktop → Appearance → **Light** → **Import** → `cosmic/EmberDay.ron`
 
+Or from a terminal in this folder, which takes the whole file:
+
+```bash
+cosmic-settings appearance import cosmic/EmberDay.ron
+```
+
+Since the COSMIC builds after 1.11.0 the **Import** button keeps your current
+frosted glass (level, on/off per surface, opacity), gaps and active hint, and
+takes only the colours, corners, fonts and icons from the file. The terminal
+command applies this rice's frosted glass too, and so does `themebox flip`.
+
 Accent and window hint are the ember ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`, matching the other half.
 Use the `+` control if you want a custom swatch.
 
@@ -185,7 +196,7 @@ Frosted glass is on in the `.ron` at `frosted: Low` with an opacity table of
 0.66 to 0.96, tinted with the palette's middle neutral ![#868686](https://placehold.co/12x12/868686/868686.png) `#868686`, for windows, panel,
 applets and system UI (maximized apps stay solid), and corners are squared
 (`radius_*: 2.0`), the same as the DarkGold baseline. Adjust frosted glass on
-Appearance → Style → Frosted glass after import; those sliders survive a theme switch.
+Appearance → Style → Frosted glass after import; the Import button keeps those sliders.
 
 **Known COSMIC bug:** moving the frosted glass opacity / thickness sliders can
 reset `text_tint` to ![#FFFFFF](https://placehold.co/12x12/ffffff/ffffff.png) `#FFFFFF`, which on a light theme makes every label
