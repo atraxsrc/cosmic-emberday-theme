@@ -18,6 +18,6 @@ done
 
 cat <<'EOF'
 
-Done. Needs the Maple fonts and Cosmic-EmberDay icons (./icons/install.sh) installed, and the Ember Day terminal scheme
+Done. Needs the fonts (./fonts/install.sh) and Cosmic-EmberDay icons (./icons/install.sh) installed, and the Ember Day terminal scheme
 imported, or COSMIC falls back to its defaults.
 EOF
