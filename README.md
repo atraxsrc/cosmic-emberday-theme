@@ -220,7 +220,7 @@ Firefox and the shell layer do not follow the toggle; those are per-rice files.
 | Where | Setting |
 |-------|---------|
 | Fonts | Interface `Maple Mono Normal`, monospace `Maple Mono Normal NFM` |
-| Icons | Cosmic-EmberDay-Ember |
+| Icons | Cosmic-EmberDay-Ink |
 | Windows | Minimize / maximize buttons hidden, theme applied to GNOME apps |
 | Terminal | Maple Mono 15 (weights 500 / bold 800 / dim 300), opaque, no header bar, Ember Day (light scheme) |
 
@@ -699,13 +699,13 @@ cp btop/EmberDay.theme ~/.config/btop/themes/
 Icons: **Cosmic-EmberDay**, the [Kanagawa icons](https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme/tree/main/icons/Kanagawa)
 by Fausto Korpsvart recolored to this palette in
 [cosmic-icon-themes](https://github.com/atraxsrc/cosmic-icon-themes). Folders come in
-four colors: **Ember** ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A` (default), **Moss** ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45`, **Slate** ![#2F5C8A](https://placehold.co/12x12/2f5c8a/2f5c8a.png) `#2F5C8A` and **Ink** ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36` with ember symbols.
+four colors: **Ember** ![#A4441A](https://placehold.co/12x12/a4441a/a4441a.png) `#A4441A`, **Moss** ![#4C6B45](https://placehold.co/12x12/4c6b45/4c6b45.png) `#4C6B45`, **Slate** ![#2F5C8A](https://placehold.co/12x12/2f5c8a/2f5c8a.png) `#2F5C8A` and **Ink** ![#2B2E36](https://placehold.co/12x12/2b2e36/2b2e36.png) `#2B2E36` (default) with ember symbols.
 
 ![Cosmic-EmberDay folder colors](https://raw.githubusercontent.com/atraxsrc/cosmic-icon-themes/main/previews/Cosmic-EmberDay.png)
 
 ```bash
-./icons/install.sh                  # Ember folders
-./icons/install.sh --variant Moss   # or Slate, Ink
+./icons/install.sh                  # Ink folders
+./icons/install.sh --variant Ember  # or Moss, Slate
 ```
 
 It downloads the pack from the latest cosmic-icon-themes release, checks its SHA256,

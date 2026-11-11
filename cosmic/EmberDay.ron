@@ -72,7 +72,7 @@
     frosted_panel: true,
     frosted_applets: true,
     frosted_maximized_apps: false,
-    icon_theme: "Cosmic-EmberDay-Ember",
+    icon_theme: "Cosmic-EmberDay-Ink",
     font: (
         family: "Maple Mono Normal",
         weight: Normal,
